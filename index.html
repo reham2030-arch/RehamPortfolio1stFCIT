@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رهام الزهراني | ملف الإنجاز</title>
+<meta name="description" content="ملف إنجاز رهام الزهراني — السنة الأولى في كلية الحاسبات وتقنية المعلومات، جامعة الملك عبدالعزيز">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23AD0F3D'/%3E%3Cstop offset='1' stop-color='%23FF6F91'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='50' cy='50' r='46' fill='url(%23g)'/%3E%3Ctext x='50' y='66' font-size='52' text-anchor='middle' fill='white' font-family='sans-serif'%3Eر%3C/text%3E%3C/svg%3E">
+
+<script>
+(function(){
+  try{
+    var t = localStorage.getItem('theme');
+    if(!t){ t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'; }
+    document.documentElement.setAttribute('data-theme', t);
+  }catch(e){
+    document.documentElement.setAttribute('data-theme','light');
+  }
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=El+Messiri:wght@500;600;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+
+<style>
+/* ============ Design tokens ============ */
+:root{
+  --garnet:#AD0F3D;
+  --rose:#E63462;
+  --blossom:#FF6F91;
+  --petal:#FFD6E2;
+  --cream:#FFF8F6;
+  --ink:#28121A;
+  --muted:#8C6470;
+
+  --bg:var(--cream);
+  --surface:#FFFFFF;
+  --text:var(--ink);
+  --text-muted:var(--muted);
+  --border:rgba(173,15,61,0.14);
+  --shadow:0 14px 34px -14px rgba(173,15,61,0.32);
+
+  --grad:linear-gradient(135deg, var(--garnet), var(--rose) 48%, var(--blossom));
+  --grad-soft:linear-gradient(135deg, rgba(230,52,98,0.12), rgba(255,111,145,0.12));
+
+  --radius-sm:10px;
+  --radius-md:18px;
+  --radius-lg:26px;
+
+  --font-display:'El Messiri', system-ui, sans-serif;
+  --font-body:'IBM Plex Sans Arabic', system-ui, sans-serif;
+  --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+}
+[data-theme="dark"]{
+  --bg:#170A0F;
+  --surface:#241218;
+  --text:#FBEEF1;
+  --text-muted:#C99AA8;
+  --border:rgba(255,143,174,0.16);
+  --shadow:0 16px 38px -14px rgba(0,0,0,0.6);
+  --grad:linear-gradient(135deg,#FF3D6E, #FF6F91 48%, #FF9DB8);
+  --grad-soft:linear-gradient(135deg, rgba(255,61,110,0.18), rgba(255,157,184,0.12));
+}
+
+/* ============ Reset ============ */
+*{ margin:0; padding:0; box-sizing:border-box; }
+html{ scroll-behavior:smooth; }
+body{
+  background:var(--bg); color:var(--text); font-family:var(--font-body);
+  line-height:1.75; overflow-x:hidden;
+  transition:background .45s ease, color .45s ease;
+}
+h1,h2,h3,h4{ font-family:var(--font-display); font-weight:700; line-height:1.3; }
+a{ color:inherit; text-decoration:none; }
+img{ max-width:100%; display:block; }
+button{ font-family:inherit; cursor:pointer; border:none; background:none; color:inherit; }
+ul{ list-style:none; }
+::selection{ background:var(--rose); color:#fff; }
+.container{ width:100%; max-width:1160px; margin-inline:auto; padding-inline:1.4rem; }
+.icon{ width:1.15em; height:1.15em; flex-shrink:0; }
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior:auto; }
+  *, *::before, *::after{
+    animation-duration:.01ms !important; animation-iteration-count:1 !important;
+    transition-duration:.01ms !important; scroll-behavior:auto !important;
+  }
+}
+:focus-visible{ outline:2px solid var(--rose); outline-offset:3px; border-radius:6px; }
+
+/* ============ Skip link ============ */
+.skip-link{
+  position:absolute; right:1rem; top:-4rem; background:var(--grad); color:#fff;
+  padding:.7rem 1.3rem; border-radius:10px; z-index:300; font-weight:600; transition:top .3s;
+}
+.skip-link:focus{ top:1rem; }
+
+/* ============ Reveal utility ============ */
+.reveal{ opacity:0; transform:translateY(26px); transition:opacity .7s ease, transform .7s ease; }
+.reveal.in{ opacity:1; transform:translateY(0); }
+
+/* ============ Nav ============ */
+.nav{
+  position:sticky; top:0; z-index:50;
+  background:color-mix(in srgb, var(--bg) 80%, transparent);
+  backdrop-filter:blur(16px) saturate(160%);
+  border-bottom:1px solid var(--border);
+  transition:background .45s, border-color .45s, box-shadow .3s;
+}
+.nav.scrolled{ box-shadow:var(--shadow); }
+.nav-inner{ display:flex; align-items:center; justify-content:space-between; padding-block:.85rem; }
+.brand{ display:flex; align-items:center; gap:.65rem; }
+.brand-mark{
+  width:42px; height:42px; border-radius:13px; background:var(--grad);
+  display:flex; align-items:center; justify-content:center; color:#fff;
+  font-family:var(--font-display); font-size:1.15rem; font-weight:700; flex-shrink:0;
+  box-shadow:var(--shadow);
+}
+.brand-logo-img {
+  height: 60px; /* يمكنك تكبير أو تصغير الرقم حسب رغبتك */
+  width: auto;  /* ليحافظ على أبعاد الصورة الأصلية */
+  display: block; /* ليظهر بشكل مرتب */
+  object-fit: contain; /* لضمان عدم تمدد الصورة بشكل سيء */
+}
+.brand-name{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; }
+.nav-links{ display:none; align-items:center; gap:1.9rem; }
+.nav-link{
+  position:relative; font-weight:500; font-size:.95rem; color:var(--text-muted);
+  padding-block:.4rem; transition:color .25s;
+}
+.nav-link::after{
+  content:""; position:absolute; right:0; left:0; bottom:-3px; height:2px;
+  background:var(--grad); border-radius:2px; transform:scaleX(0); transition:transform .3s;
+}
+.nav-link.active, .nav-link:hover{ color:var(--text); }
+.nav-link.active::after{ transform:scaleX(1); }
+.nav-actions{ display:flex; align-items:center; gap:.6rem; }
+.theme-toggle, .nav-burger{
+  width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center; transition:transform .25s, background .25s;
+}
+.nav-burger{ border-radius:12px; }
+.theme-toggle:hover, .nav-burger:hover{ background:var(--grad-soft); transform:translateY(-2px); }
+.theme-toggle .icon-moon, .theme-toggle .icon-sun{ color:var(--rose); }
+[data-theme="light"] .theme-toggle .icon-sun{ display:none; }
+[data-theme="dark"] .theme-toggle .icon-moon{ display:none; }
+@media (min-width:880px){ .nav-links{ display:flex; } .nav-burger{ display:none; } }
+
+/* Mobile menu */
+.mobile-menu{
+  position:fixed; inset:0; background:var(--bg); z-index:90; padding:6rem 1.6rem 2rem;
+  display:flex; flex-direction:column; gap:1.6rem;
+  transform:translateY(-100%); transition:transform .4s ease; overflow-y:auto;
+}
+.mobile-menu.open{ transform:translateY(0); }
+.mobile-menu a{ font-family:var(--font-display); font-weight:600; font-size:1.5rem; }
+.mobile-menu-close{
+  position:absolute; top:1.4rem; inset-inline-start:1.4rem; width:44px; height:44px;
+  border-radius:50%; border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+}
+
+/* ============ Hero ============ */
+.hero{ position:relative; padding-top:3.6rem; padding-bottom:3.6rem; overflow:hidden; }
+.hero-blob{ position:absolute; border-radius:50%; filter:blur(70px); opacity:.5; z-index:0; pointer-events:none; transition:transform .2s ease-out; }
+.hero-blob.b1{ width:380px; height:380px; background:var(--blossom); top:-130px; inset-inline-end:-110px; }
+.hero-blob.b2{ width:300px; height:300px; background:var(--rose); bottom:-110px; inset-inline-start:-90px; }
+.hero-grid{ position:relative; z-index:1; display:grid; gap:3rem; align-items:center; }
+@media (min-width:980px){ .hero-grid{ grid-template-columns:1.05fr .95fr; } }
+
+.eyebrow{
+  display:inline-flex; align-items:center; gap:.5rem; font-weight:600; font-size:.78rem;
+  letter-spacing:.02em; color:var(--rose); background:var(--grad-soft);
+  padding:.4rem 1rem; border-radius:99px; margin-bottom:1.2rem;
+}
+.eyebrow .icon{ width:1em; height:1em; }
+.hero h1{
+  font-size:clamp(2.5rem, 6vw, 3.7rem); margin-bottom:.7rem;
+  background:var(--grad); -webkit-background-clip:text; background-clip:text; color:transparent;
+}
+.hero-role{ font-size:1.2rem; font-weight:600; color:var(--text-muted); min-height:2rem; margin-bottom:1.2rem; }
+.hero-role .cursor{ display:inline-block; width:2px; height:1.1em; vertical-align:-2px; background:var(--rose); margin-inline-start:3px; animation:blink 1s steps(1) infinite; }
+@keyframes blink{ 50%{ opacity:0; } }
+.hero .bio{ max-width:50ch; color:var(--text-muted); margin-bottom:1.9rem; font-size:1.02rem; }
+.hero-ctas{ display:flex; flex-wrap:wrap; gap:.9rem; margin-bottom:2rem; }
+.btn{
+  display:inline-flex; align-items:center; gap:.55rem; padding:.85rem 1.7rem; border-radius:99px;
+  font-weight:600; font-size:.95rem; transition:transform .25s, box-shadow .25s, background .25s;
+}
+.btn-primary{ background:var(--grad); color:#fff; box-shadow:var(--shadow); }
+.btn-primary:hover{ transform:translateY(-3px); }
+.btn-ghost{ border:1.5px solid var(--border); }
+.btn-ghost:hover{ background:var(--grad-soft); }
+.hero-stats{ display:flex; gap:1rem; flex-wrap:wrap; }
+.stat-pill{
+  display:flex; align-items:center; gap:.55rem; background:var(--surface); border:1px solid var(--border);
+  padding:.65rem 1.05rem; border-radius:14px; box-shadow:var(--shadow); font-size:.88rem; font-weight:600;
+}
+.stat-pill .icon{ color:var(--rose); }
+.stat-pill b{ color:var(--rose); }
+
+.hero-visual{ position:relative; justify-self:center; }
+.portrait-frame{
+  position:relative; width:min(320px,76vw); aspect-ratio:4/5; border-radius:30px; overflow:hidden;
+  box-shadow:var(--shadow); border:5px solid var(--surface);
+}
+.portrait-frame img{ width:100%; height:100%; object-fit:cover; }
+.gpa-ring{
+  position:absolute; bottom:-22px; inset-inline-start:-24px; width:100px; height:100px;
+  background:var(--surface); border-radius:50%; box-shadow:var(--shadow);
+  display:flex; align-items:center; justify-content:center; border:1px solid var(--border);
+}
+.gpa-ring svg{ position:absolute; inset:0; }
+.gpa-ring .label{ position:relative; text-align:center; }
+.gpa-ring .label b{ display:block; font-family:var(--font-mono); font-size:1.05rem; color:var(--rose); }
+.gpa-ring .label small{ font-size:.58rem; color:var(--text-muted); }
+.badge-chip{
+  position:absolute; background:var(--surface); border:1px solid var(--border); border-radius:14px;
+  padding:.55rem 1rem; box-shadow:var(--shadow); font-size:.8rem; font-weight:600;
+  display:flex; gap:.45rem; align-items:center; white-space:nowrap;
+}
+.badge-chip .icon{ color:var(--rose); }
+.badge-chip.uni{ top:8%; inset-inline-start:-15%; }
+.badge-chip.major{ top:62%; inset-inline-end:-18%; }
+
+.scroll-cue{
+  display:flex; flex-direction:column; align-items:center; gap:.4rem; margin-top:3.2rem;
+  color:var(--text-muted); font-size:.8rem;
+}
+.scroll-cue .icon{ animation:bob 1.8s ease-in-out infinite; }
+@keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(6px); } }
+
+/* ============ Sections ============ */
+.section{ padding-block:3.5rem; position:relative; }
+.section--tint{
+  background:radial-gradient(ellipse 80% 60% at 50% 0%, color-mix(in srgb, var(--petal) 45%, transparent), transparent 70%);
+}
+[data-theme="dark"] .section--tint {
+  background: none;
+}
+.section-head{ text-align:center; max-width:620px; margin-inline:auto; margin-bottom:3.2rem; }
+.section-head .eyebrow{ margin-bottom:1rem; }
+.section-head h2{ font-size:clamp(1.9rem,4vw,2.6rem); margin-bottom:.7rem; }
+.section-head p{ color:var(--text-muted); }
+
+/* ============ Skills ============ */
+.skills-grid{ display:grid; gap:1.6rem; }
+@media (min-width:780px){ .skills-grid{ grid-template-columns:1fr 1fr; } }
+.skill-panel{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:2rem; box-shadow:var(--shadow);
+}
+.skill-panel h3{ display:flex; align-items:center; gap:.65rem; font-size:1.25rem; margin-bottom:1.5rem; }
+.skill-panel h3 .ic{
+  width:40px; height:40px; border-radius:12px; background:var(--grad); color:#fff;
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.skill-row{
+  display:flex; align-items:center; gap:.85rem; padding:.75rem 0; border-bottom:1px dashed var(--border);
+  transition:padding-inline-start .25s, color .25s;
+}
+.skill-row:last-child{ border-bottom:none; }
+.skill-row:hover{ padding-inline-start:.5rem; color:var(--rose); }
+.skill-row .ic{
+  width:38px; height:38px; border-radius:10px; background:var(--grad-soft); color:var(--rose);
+  display:flex; align-items:center; justify-content:center; flex-shrink:0;
+}
+.skill-row span{ font-size:.97rem; font-weight:500; }
+
+/* ============ Timeline (Clubs) ============ */
+.timeline{ position:relative; padding-inline-end:1.6rem; }
+.timeline::before{
+  content:""; position:absolute; inset-inline-start:0; top:8px; bottom:8px; width:2px;
+  background:linear-gradient(var(--rose), var(--blossom)); border-radius:2px; opacity:.55;
+}
+.timeline-item{ position:relative; padding-inline-start:2.6rem; margin-bottom:3rem; }
+.timeline-item:last-child{ margin-bottom:0; }
+.timeline-node{
+  position:absolute; inset-inline-start:-7px; top:10px; width:18px; height:18px; border-radius:50%;
+  background:var(--grad); box-shadow:0 0 0 5px var(--bg);
+}
+.timeline-node::after{
+  content:""; position:absolute; inset:-7px; border-radius:50%; border:2px solid var(--rose);
+  opacity:.45; animation:pulse 2.6s ease-out infinite;
+}
+@keyframes pulse{ 0%{ transform:scale(.65); opacity:.55; } 100%{ transform:scale(1.7); opacity:0; } }
+.tl-card{
+  background:var(--surface); border:1px solid var(--border); border-radius:var(--radius-lg);
+  padding:1.9rem; box-shadow:var(--shadow);
+}
+.tl-head{ display:flex; gap:1.1rem; align-items:flex-start; flex-wrap:wrap; margin-bottom:1.1rem; }
+.tl-logo{
+  width:58px; height:58px; border-radius:15px; overflow:hidden; flex-shrink:0;
+  border:1px solid var(--border); background:var(--grad-soft);
+}
+.tl-logo img{ width:100%; height:100%; object-fit:cover; }
+.tl-titles{ flex:1; min-width:180px; }
+.tl-titles h3{ font-size:1.18rem; margin-bottom:.3rem; }
+.tl-role{ color:var(--rose); font-weight:600; font-size:.92rem; }
+.tl-date{
+  font-family:var(--font-body); font-size:.78rem; color:var(--text-muted); font-weight:600;
+  background:var(--grad-soft); padding:.35rem .8rem; border-radius:99px; white-space:nowrap;
+}
+.tl-list{ display:grid; gap:.65rem; margin-block:1.1rem; }
+.tl-list li{ display:flex; gap:.65rem; align-items:flex-start; color:var(--text-muted); font-size:.95rem; }
+.tl-list li .icon{ color:var(--rose); margin-top:3px; }
+.tl-note{ color:var(--text-muted); font-size:.93rem; margin-bottom:1.1rem; }
+.tl-gallery{ display:grid; grid-template-columns:repeat(auto-fit, minmax(90px,1fr)); gap:.65rem; margin-top:1.1rem; }
+.tl-gallery img{ aspect-ratio:1; object-fit:cover; border-radius:11px; cursor:zoom-in; transition:transform .3s; }
+.tl-gallery img:hover{ transform:scale(1.05); }
+.tl-link{
+  display:inline-flex; gap:.45rem; align-items:center; margin-top:1.1rem; font-weight:600;
+  color:var(--rose); font-size:.9rem;
+}
+
+/* ============ Competitions (flip cards) ============ */
+.comp-grid{ display:grid; gap:1.7rem; }
+@media (min-width:780px){ .comp-grid{ grid-template-columns:1fr 1fr; } }
+.flip-card{ perspective:1600px; height:360px; }
+.flip-card[role="button"]{ outline-offset:6px; }
+.flip-inner{
+  position:relative; width:100%; height:100%; transition:transform .6s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
+}
+.flip-card.flipped .flip-inner{ transform:rotateY(180deg); }
+.flip-face{
+  position:absolute; inset:0; backface-visibility:hidden; border-radius:var(--radius-lg);
+  border:1px solid var(--border); padding:1.9rem; display:flex; flex-direction:column;
+  background:var(--surface); box-shadow:var(--shadow); cursor:pointer;
+}
+.flip-back{ transform:rotateY(180deg); overflow-y:auto; }
+.comp-badge{
+  align-self:flex-start; background:var(--grad); color:#fff; font-size:.78rem; font-weight:700;
+  padding:.4rem .9rem; border-radius:99px; margin-bottom:1.2rem;
+}
+.flip-front .tl-logo{ margin-bottom:1.1rem; width:64px; height:64px; }
+.flip-front h3{ font-size:1.2rem; margin-bottom:.4rem; }
+.flip-front .proj{ color:var(--rose); font-weight:600; font-size:.92rem; margin-bottom:.3rem; }
+.flip-front .tl-date{ align-self:flex-start; margin-top:.6rem; }
+.flip-hint{
+  margin-top:auto; display:flex; align-items:center; gap:.45rem; font-size:.78rem; color:var(--text-muted);
+  padding-top:1rem;
+}
+.flip-back h4{ font-family:var(--font-display); font-size:1.05rem; margin-bottom:.6rem; color:var(--rose); }
+.flip-back p{ font-size:.92rem; color:var(--text-muted); margin-bottom:1rem; }
+.flip-back img{ border-radius:12px; margin-bottom:1rem; cursor:zoom-in; aspect-ratio:16/9; object-fit:cover; }
+.flip-back .tl-link{ margin-top:0; }
+
+/* ============ Events gallery ============ */
+.gallery{ column-count:1; column-gap:1.3rem; }
+@media (min-width:640px){ .gallery{ column-count:2; } }
+@media (min-width:1020px){ .gallery{ column-count:3; } }
+.gallery-item{
+  break-inside:avoid; margin-bottom:1.3rem; position:relative; border-radius:var(--radius-md);
+  overflow:hidden; box-shadow:var(--shadow); cursor:zoom-in;
+}
+.gallery-item img{ width:100%; transition:transform .45s; }
+.gallery-item:hover img{ transform:scale(1.07); }
+.gallery-caption{
+  position:absolute; inset-inline:0; bottom:0; padding:1.1rem;
+  background:linear-gradient(to top, rgba(10,4,6,.82), transparent); color:#fff;
+}
+.gallery-caption .d{ font-family:var(--font-body); font-size:.74rem; opacity:.85; margin-top:.2rem; }
+.gallery-plus{
+  position:absolute; top:.8rem; inset-inline-end:.8rem; width:36px; height:36px; border-radius:50%;
+  background:rgba(255,255,255,.18); backdrop-filter:blur(8px); display:flex; align-items:center;
+  justify-content:center; color:#fff; border:1px solid rgba(255,255,255,.32);
+}
+
+/* ============ Lightbox ============ */
+.lightbox{
+  position:fixed; inset:0; background:rgba(10,4,6,.9); z-index:120; display:flex; flex-direction:column;
+  align-items:center; justify-content:center; padding:2rem; opacity:0; visibility:hidden; transition:opacity .3s;
+}
+.lightbox.open{ opacity:1; visibility:visible; }
+.lightbox img{ max-width:min(880px,92vw); max-height:76vh; border-radius:16px; box-shadow:0 24px 60px rgba(0,0,0,.5); }
+.lightbox-caption{ color:#fff; text-align:center; margin-top:1.2rem; font-size:.92rem; opacity:.9; max-width:60ch; }
+.lightbox-close{
+  position:absolute; top:1.5rem; inset-inline-end:1.5rem; width:46px; height:46px; border-radius:50%;
+  background:rgba(255,255,255,.14); color:#fff; display:flex; align-items:center; justify-content:center;
+}
+
+/* ============ Back to top ============ */
+.to-top{
+  position:fixed; bottom:1.7rem; inset-inline-end:1.7rem; width:50px; height:50px; border-radius:50%;
+  background:var(--grad); color:#fff; display:flex; align-items:center; justify-content:center;
+  box-shadow:var(--shadow); opacity:0; transform:translateY(20px); pointer-events:none;
+  transition:opacity .3s, transform .3s; z-index:60;
+}
+.to-top.show{ opacity:1; transform:translateY(0); pointer-events:auto; }
+
+/* ============ Footer ============ */
+.footer{ border-top:1px solid var(--border); padding-block:3.4rem; text-align:center; position:relative; }
+.footer::before{ content:""; position:absolute; top:0; inset-inline:0; height:3px; background:var(--grad); }
+.footer .brand-mark{ margin-inline:auto; margin-bottom:1.1rem; }
+.footer p{ color:var(--text-muted); font-size:.95rem; }
+.footer-links{ display:flex; justify-content:center; gap:.9rem; margin-block:1.4rem; flex-wrap:wrap; }
+.footer-links a{
+  display:flex; align-items:center; gap:.45rem; padding:.55rem 1.1rem; border:1px solid var(--border);
+  border-radius:99px; font-size:.85rem; font-weight:600; transition:.25s;
+}
+.footer-links a:hover{ background:var(--grad-soft); color:var(--rose); }
+.footer small{ color:var(--text-muted); display:block; margin-top:1.2rem; font-size:.78rem; }
+
+/* ============ Responsive tweaks ============ */
+@media (max-width:540px){
+  .badge-chip.uni, .badge-chip.major{ position:static; margin-top:.8rem; display:inline-flex; }
+  .hero-visual{ display:flex; flex-direction:column; align-items:center; }
+  .gpa-ring{ position:static; margin-top:1.4rem; }
+}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">تخطي إلى المحتوى</a>
+
+<!-- ============ Icon sprite ============ -->
+<svg style="display:none" aria-hidden="true">
+  <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><line x1="12" y1="2" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="22"/><line x1="2" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="22" y2="12"/><line x1="4.2" y1="4.2" x2="6.3" y2="6.3"/><line x1="17.7" y1="17.7" x2="19.8" y2="19.8"/><line x1="4.2" y1="19.8" x2="6.3" y2="17.7"/><line x1="17.7" y1="6.3" x2="19.8" y2="4.2"/></symbol>
+  <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/></symbol>
+  <symbol id="i-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/></symbol>
+  <symbol id="i-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="16" y1="2" x2="16" y2="6"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><path d="M3.5 19c.8-3 3-4.5 5.5-4.5s4.7 1.5 5.5 4.5"/><circle cx="17" cy="9" r="2.4"/><path d="M15.3 14.8c2.1.2 3.7 1.6 4.3 4"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-bulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.4.3.6.8.6 1.3V16h6v-.9c0-.5.2-1 .6-1.3A6 6 0 0 0 12 3Z"/></symbol>
+  <symbol id="i-chat" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v10H9l-4 4v-4H4Z"/></symbol>
+  <symbol id="i-layout" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="9" x2="9" y2="21"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 7 4 12 9 17"/><polyline points="15 7 20 12 15 17"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0"/><line x1="12" y1="18" x2="12" y2="22"/><line x1="8" y1="22" x2="16" y2="22"/></symbol>
+  <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="3" y1="13" x2="21" y2="13"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 16 14"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20.5s-7-4.2-9.3-8.4C1 9 2.6 5.3 6 5.3c2 0 3.4 1.3 4.4 2.8 1-1.5 2.4-2.8 4.4-2.8 3.4 0 5 3.7 3.3 6.8C19 16.3 12 20.5 12 20.5Z"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="5"/><path d="M9 12.5 7.5 21l4.5-2.5 4.5 2.5-1.5-8.5"/></symbol>
+  <symbol id="i-plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="4" x2="12" y2="20"/><line x1="4" y1="12" x2="20" y2="12"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 6.5 12 13l9-6.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 14a4 4 0 0 0 5.7.2l2-2A4 4 0 0 0 12 6.5l-1 1"/><path d="M14 10a4 4 0 0 0-5.7-.2l-2 2A4 4 0 0 0 12 17.5l1-1"/></symbol>
+  <symbol id="i-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="6 11 12 5 18 11"/></symbol>
+  <symbol id="i-rotate" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3.5 12a8.5 8.5 0 1 0 2.7-6.2"/><polyline points="2.7 3.5 6.2 5.8 3.9 9.3"/></symbol>
+  <symbol id="i-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4 2 9l10 5 10-5Z"/><path d="M6 11.5V17c0 1.2 2.7 2.5 6 2.5s6-1.3 6-2.5v-5.5"/></symbol>
+  <symbol id="i-edit" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17.5 4 20h2.5L18 8.5l-2.5-2.5Z"/><line x1="13.5" y1="4.5" x2="16.5" y2="7.5"/></symbol>
+  <symbol id="i-shuffle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 3 21 3 21 8"/><line x1="4" y1="20" x2="21" y2="3"/><polyline points="21 16 21 21 16 21"/><line x1="15" y1="15" x2="21" y2="21"/><line x1="4" y1="4" x2="9" y2="9"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><polyline points="8 12.5 11 15.5 16 9"/></symbol>
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5C4.98 4.6 4.13 5.5 3 5.5S1.02 4.6 1.02 3.5 1.9 1.5 3 1.5s1.98.9 1.98 2zM.5 8h4.96v15.5H.5V8zm7.5 0h4.76v2.13h.07c.66-1.25 2.28-2.57 4.7-2.57 5.02 0 5.95 3.3 5.95 7.6v8.34h-4.96v-7.4c0-1.77-.03-4.04-2.46-4.04-2.47 0-2.85 1.93-2.85 3.92v7.52H8V8z"/></symbol>
+  <symbol id="i-social-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+</svg>
+
+<!-- ============ Nav ============ -->
+<header class="nav" id="siteNav">
+  <div class="container nav-inner">
+    <a href="#Home" class="brand">
+      <span class="brand-mark">
+        <img src="logo.png" alt="شعار رهام الزهراني" class="brand-logo-img">
+      </span>
+      <span class="brand-name">رهام الزهراني</span>
+    </a>
+    <nav class="nav-links" aria-label="روابط رئيسية">
+      <a class="nav-link" href="#Home" data-target="Home">الرئيسية</a>
+      <a class="nav-link" href="#skills" data-target="skills">المهارات</a>
+      <a class="nav-link" href="#Clubs-Volunteering" data-target="Clubs-Volunteering">الأندية والتطوع</a>
+      <a class="nav-link" href="#competitions" data-target="competitions">المسابقات</a>
+      <a class="nav-link" href="#VariousEvents" data-target="VariousEvents">أحداث متنوعة</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري">
+        <svg class="icon icon-moon"><use href="#i-moon"/></svg>
+        <svg class="icon icon-sun"><use href="#i-sun"/></svg>
+      </button>
+      <button class="nav-burger" id="navBurger" aria-label="فتح القائمة" aria-expanded="false">
+        <svg class="icon"><use href="#i-menu"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-menu-close" id="mobileMenuClose" aria-label="إغلاق القائمة">
+    <svg class="icon"><use href="#i-x"/></svg>
+  </button>
+  <a href="#Home" class="mobile-link">الرئيسية</a>
+  <a href="#skills" class="mobile-link">المهارات</a>
+  <a href="#Clubs-Volunteering" class="mobile-link">الأندية والتطوع</a>
+  <a href="#competitions" class="mobile-link">المسابقات</a>
+  <a href="#VariousEvents" class="mobile-link">أحداث متنوعة</a>
+</div>
+
+<main id="main">
+
+<!-- ============ Hero ============ -->
+<section class="hero" id="Home">
+  <div class="hero-blob b1" id="blob1"></div>
+  <div class="hero-blob b2" id="blob2"></div>
+  <div class="container hero-grid">
+    <div class="hero-text reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-cap"/></svg>  ملف إنجاز · السنة الأولى في FCIT</span>
+      <h1>رهام الزهراني</h1>
+      <p class="hero-role"><span id="typeTarget"></span><span class="cursor" aria-hidden="true"></span></p>
+      <p class="bio">
+        طالبة جامعية طموحة وكلّي شغف بالعمل التطوعي والقيادة، دائماً أحب أبادر وأصنع بيئة إيجابية تترك أثراً ايجابيًا في المكان.
+        عندي حس عالٍ بالمسؤولية والاهتمام بتفاصيل العمل، وتهمني الرحلة والتجارب التي أعيشها أكثر من النتيجة نفسها.
+        دائماً أسعى لأكون نسخة أفضل من نفسي، وأحب أردد: "الحياة حلوة" — وهي فعلاً حلوة!
+      </p>
+      <div class="hero-ctas">
+        <a href="#Clubs-Volunteering" class="btn btn-primary">استكشفي رحلتي <svg class="icon"><use href="#i-chevron-down"/></svg></a>
+        <a href="#contact" class="btn btn-ghost">تواصل معي</a>
+      </div>
+      <div class="hero-stats">
+        <span class="stat-pill"><svg class="icon"><use href="#i-users"/></svg> <b>٤</b> أندية وفرق</span>
+        <span class="stat-pill"><svg class="icon"><use href="#i-award"/></svg> <b>٤</b> مسابقات</span>
+        <span class="stat-pill"><svg class="icon"><use href="#i-calendar"/></svg> <b>٤</b> فعاليات</span>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal">
+      <div class="portrait-frame">
+        <img src="profile.png" alt="صورة رهام الزهراني" data-w="480" data-h="600"
+             onerror="phFallback(this,'صورتك الشخصية','profile')">
+      </div>
+      <span class="badge-chip uni"><svg class="icon"><use href="#i-cap"/></svg> جامعة الملك عبدالعزيز</span>
+      <span class="badge-chip major"><svg class="icon"><use href="#i-code"/></svg> نظم معلومات حاسوبية</span>
+      <div class="gpa-ring" id="gpaRing">
+        <svg width="100" height="100" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border)" stroke-width="8"/>
+          <circle id="gpaCircle" cx="50" cy="50" r="42" fill="none" stroke="url(#gpaGrad)" stroke-width="8"
+                  stroke-linecap="round" transform="rotate(-90 50 50)"
+                  stroke-dasharray="263.9" stroke-dashoffset="263.9"/>
+          <defs>
+            <linearGradient id="gpaGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#AD0F3D"/><stop offset="1" stop-color="#FF6F91"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="label"><b id="gpaNum">4.93</b><small>GPA / 5</small></div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="scroll-cue reveal">
+      <span>انزلي للأسفل</span>
+      <svg class="icon"><use href="#i-chevron-down"/></svg>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Skills ============ -->
+<section class="section section--tint" id="skills">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-bulb"/></svg> مهاراتي</span>
+      <h2>خليط بين الجانب الإنساني والتقني</h2>
+      <p>مهارات بنيتها وطوّرتها من خلال القيادة والتطوع والمشاريع التقنية هذا العام</p>
+    </div>
+    <div class="skills-grid">
+      <div class="skill-panel reveal">
+        <h3><span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span> Soft Skills</h3>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-check"/></svg></span><span>المسؤولية العالية والالتزام</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-users"/></svg></span><span>القيادة الهادفة والداعمة</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-shuffle"/></svg></span><span>المرونة والتكيّف</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-bulb"/></svg></span><span>التفكير التحليلي وربط الأفكار</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-clock"/></svg></span><span>إدارة الوقت والتنظيم</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span><span>التعاطف والعمل الجماعي</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-target"/></svg></span><span>التركيز على الجودة وتجربة المستخدم</span></div>
+      </div>
+      <div class="skill-panel reveal">
+        <h3><span class="ic"><svg class="icon"><use href="#i-code"/></svg></span> Practical Skills</h3>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><span>إدارة الموارد البشرية (HR)</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-layout"/></svg></span><span>التخطيط الفعّال وإعداد خطط العمل</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-calendar"/></svg></span><span>إدارة الفعاليات والأنشطة</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-edit"/></svg></span><span>إنشاء المحتوى وإدارته</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-mic"/></svg></span><span>التحدث أمام الجمهور وإدارة الجلسات</span></div>
+        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-code"/></svg></span><span>بناء المشاريع (Claude/Gemini) ونشرها على GitHub وVercel</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Clubs & Volunteering ============ -->
+<section class="section" id="Clubs-Volunteering">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-users"/></svg> القسم الأول</span>
+      <h2>الأندية والتطوع</h2>
+      <p>الفرق التي انضممت لها والأثر الذي حاولت أن أتركه في كل واحد منها</p>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <span class="timeline-node"></span>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo">
+              <img src="images/eic-logo.jpg" alt="شعار نادي الإبداع الهندسي" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
+            </div>
+            <div class="tl-titles">
+              <h3>نادي الإبداع الهندسي</h3>
+              <span class="tl-role">عضوة ← قائدة الموارد البشرية</span>
+            </div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥ – مارس ٢٠٢٦</span>
+          </div>
+          <ul class="tl-list">
+            <li><svg class="icon"><use href="#i-check"/></svg> إدارة الحوار في جلسة التعلم المستمر (٢٩ أكتوبر ٢٠٢٥)</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> إجراء مقابلات شخصية لفرز وقبول المتقدمين الجدد للقسم (٩ فبراير ٢٠٢٦)</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> تمثيل بوث النادي في اليوم الهندسي والعمراني (٥ فبراير ٢٠٢٦)</li>
+          </ul>
+          <a href="#" class="tl-link">مقتطفات من رحلتي القيادية للقسم <svg class="icon"><use href="#i-link"/></svg></a>
+          <div class="tl-gallery">
+            <img src="images/eic-1.jpg" alt="جلسة التعلم المستمر" data-w="300" data-h="300" onerror="phFallback(this,'التعلم المستمر','gallery')" onclick="openLightbox(this.src,'جلسة التعلم المستمر')">
+            <img src="images/eic-2.jpg" alt="المقابلات الشخصية" data-w="300" data-h="300" onerror="phFallback(this,'المقابلات','gallery')" onclick="openLightbox(this.src,'مقابلات قبول المتقدمين الجدد')">
+            <img src="images/eic-3.jpg" alt="بوث اليوم الهندسي" data-w="300" data-h="300" onerror="phFallback(this,'بوث النادي','gallery')" onclick="openLightbox(this.src,'بوث اليوم الهندسي والعمراني')">
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-node"></span>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo">
+              <img src="images/dsc-logo.jpg" alt="شعار نادي علم البيانات" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
+            </div>
+            <div class="tl-titles">
+              <h3>نادي علم البيانات</h3>
+              <span class="tl-role">عضوة قسم التخطيط والعلاقات العامة</span>
+            </div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥ – الآن</span>
+          </div>
+          <ul class="tl-list">
+            <li><svg class="icon"><use href="#i-check"/></svg> تقديم وإعداد ورشة التخطيط الفعّال المصاحبة لمسابقة أفضل مقترح (٢٧ نوفمبر ٢٠٢٥)</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> بناء واجهة ذكية وتفاعلية لبوث النادي في معرض TechHub (٢٦ – ٢٩ أبريل ٢٠٢٦)</li>
+          </ul>
+          <p class="tl-note">تطوير واجهات بسيطة وحيّة لتسجيل الحضور وتحليل الإحصائيات الفورية بلغة Python ومكتبة Streamlit، مع رفع المشروع ومزامنته عبر GitHub.</p>
+          <div class="tl-gallery">
+            <img src="images/dsc-1.jpg" alt="ورشة التخطيط الفعّال" data-w="300" data-h="300" onerror="phFallback(this,'الورشة','gallery')" onclick="openLightbox(this.src,'ورشة التخطيط الفعّال')">
+            <img src="images/dsc-2.jpg" alt="مسابقة أفضل مقترح" data-w="300" data-h="300" onerror="phFallback(this,'المسابقة','gallery')" onclick="openLightbox(this.src,'مسابقة أفضل مقترح')">
+            <img src="images/dsc-3.jpg" alt="مشروع بوث TechHub" data-w="300" data-h="300" onerror="phFallback(this,'المشروع','gallery')" onclick="openLightbox(this.src,'واجهة بوث معرض TechHub')">
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-node"></span>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo">
+              <img src="images/ieee-logo.jpg" alt="شعار نادي IEEE" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
+            </div>
+            <div class="tl-titles">
+              <h3>نادي IEEE</h3>
+              <span class="tl-role">عضوة قسم الموارد البشرية</span>
+            </div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> أكتوبر ٢٠٢٥ – الآن</span>
+          </div>
+          <ul class="tl-list">
+            <li><svg class="icon"><use href="#i-check"/></svg> المساهمة في تطوير واجهات تفاعلية لتسجيل الحضور وتحليل الإحصائيات بلغة Python ومكتبة Streamlit</li>
+          </ul>
+          <div class="tl-gallery">
+            <img src="images/ieee-1.jpg" alt="شهادة نادي IEEE" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة المشاركة في نادي IEEE')">
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <span class="timeline-node"></span>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div class="tl-logo">
+              <img src="images/bashosh-logo.jpg" alt="شعار فريق بشوش" data-w="160" data-h="160" onerror="phFallback(this,'شعار الفريق','logo')">
+            </div>
+            <div class="tl-titles">
+              <h3>فريق بشوش التطوعي</h3>
+              <span class="tl-role">عضوة قسم الموارد البشرية</span>
+            </div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> يناير ٢٠٢٦ – مايو ٢٠٢٦</span>
+          </div>
+          <ul class="tl-list">
+            <li><svg class="icon"><use href="#i-check"/></svg> المساهمة في تنظيم الفرص التطوعية ضمن أسبوع الملك العالمي، والحصول على شهادة خبرة عمل تطوعي معتمدة</li>
+          </ul>
+          <div class="tl-gallery">
+            <img src="images/bashosh-1.jpg" alt="شهادة فريق بشوش" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة خبرة العمل التطوعي')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Competitions ============ -->
+<section class="section" id="competitions">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-award"/></svg> القسم الثاني</span>
+      <h2>المسابقات والهاكاثونات</h2>
+      <p>تحديات خضتها وأفكار تحوّلت إلى نماذج حقيقية — اضغطي على البطاقة لعرض التفاصيل</p>
+    </div>
+
+    <div class="comp-grid">
+
+      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل هاكاثون SportTech" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <span class="comp-badge">🥉 المركز الثالث</span>
+            <div class="tl-logo"><img src="images/comp-sporttech-logo.jpg" alt="شعار هاكاثون SportTech" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
+            <h3>هاكاثون SportTech</h3>
+            <span class="proj">Saudi Heritage Step</span>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+          </div>
+          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <h4>عن المشروع</h4>
+            <p>فريق من ثلاثة أعضاء طوّر فكرة تدمج الرياضة بالتراث الوطني، عبر تمارين خفيفة لكبار السن مستوحاة من الرقصات الشعبية السعودية، مع نموذج أولي (Prototype) بمساعدة Claude AI.</p>
+            <img src="images/comp-sporttech-cert.jpg" alt="شهادة هاكاثون SportTech" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المركز الثالث - هاكاثون SportTech')">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل تحدي Build the Vibe" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <span class="comp-badge">🥉 المركز الثالث</span>
+            <div class="tl-logo"><img src="images/comp-buildthevibe-logo.jpg" alt="شعار تحدي Build the Vibe" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
+            <h3>تحدي Build the Vibe</h3>
+            <span class="proj">موقع Jeddah Art Gallery</span>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+          </div>
+          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <h4>عن المشروع</h4>
+            <p>تطوير موقع وواجهات تفاعلية كاملة وفق سيناريو محدد، باستخدام أسلوب Vibe Coding بمساعدة Gemini، ومزامنة بيئة العمل عبر GitHub Codespaces، وإطلاق الموقع على Vercel.</p>
+            <img src="images/comp-buildthevibe-cert.jpg" alt="شهادة تحدي Build the Vibe" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المركز الثالث - Build the Vibe')">
+            <a href="#" class="tl-link" onclick="event.stopPropagation()">زيارة الموقع المباشر <svg class="icon"><use href="#i-link"/></svg></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل تحدي Dev Summit Challenge" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <span class="comp-badge">مشاركة</span>
+            <div class="tl-logo"><img src="images/comp-devsummit-logo.jpg" alt="شعار تحدي Dev Summit Challenge" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
+            <h3>تحدي Dev Summit Challenge</h3>
+            <span class="proj">تحديات برمجية بلغة Java</span>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+          </div>
+          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <h4>عن المشروع</h4>
+            <p>فريق من ثلاث طالبات حلّ مجموعة من المشكلات البرمجية بلغة Java، ورفع الحلول والأكواد عبر منصتي Vjudge وCodeforces.</p>
+            <img src="images/comp-devsummit-cert.jpg" alt="شهادة تحدي Dev Summit Challenge" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المشاركة - Dev Summit Challenge')">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل هاكاثون Spacethon" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+        <div class="flip-inner">
+          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <span class="comp-badge">مشاركة</span>
+            <div class="tl-logo"><img src="images/comp-spacethon-logo.jpg" alt="شعار هاكاثون Spacethon" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
+            <h3>هاكاثون Spacethon</h3>
+            <span class="proj">Inspiring Saudi Space Journey</span>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+          </div>
+          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+            <h4>عن المشروع</h4>
+            <p>فريق من أربعة أعضاء طوّر فكرة لتعليم الأطفال علوم الفضاء بأسلوب تفاعلي يمزج بين المانجا والواقع المعزز، عبر نموذج أولي بمساعدة Claude AI.</p>
+            <img src="images/comp-spacethon-cert.jpg" alt="شهادة هاكاثون Spacethon" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المشاركة - هاكاثون Spacethon')">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ Various Events ============ -->
+<section class="section section--tint" id="VariousEvents">
+  <div class="container">
+    <div class="section-head reveal">
+      <span class="eyebrow"><svg class="icon"><use href="#i-calendar"/></svg> القسم الثالث</span>
+      <h2>لقطات من رحلتي</h2>
+      <p>فعاليات ومحطات لا تُنسى من السنة الأولى</p>
+    </div>
+
+    <div class="gallery">
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'المؤتمر الأول لريادة الأعمال — مركز الملك فيصل للمؤتمرات')">
+        <img src="images/event-innovation.jpg" alt="المؤتمر الأول لريادة الأعمال" data-w="480" data-h="420" onerror="phFallback(this,'صورة الفعالية','gallery')">
+        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
+        <div class="gallery-caption">
+          <div>المؤتمر الأول لريادة الأعمال</div>
+          <div class="d">مركز الملك فيصل للمؤتمرات · ٢٢ أكتوبر ٢٠٢٥</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'فعاليات معرض تيك هب')">
+        <img src="images/event-techhub.jpg" alt="فعاليات معرض تيك هب" data-w="480" data-h="560" onerror="phFallback(this,'صورة الفعالية','gallery')">
+        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
+        <div class="gallery-caption">
+          <div>فعاليات معرض تيك هب</div>
+          <div class="d">٢٦ – ٢٩ أبريل ٢٠٢٦</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'هاكاثون نهج للتعلم الذكي')">
+        <img src="images/event-hackathon-nohj.jpg" alt="هاكاثون نهج للتعلم الذكي" data-w="480" data-h="360" onerror="phFallback(this,'صورة الفعالية','gallery')">
+        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
+        <div class="gallery-caption">
+          <div>هاكاثون نهج للتعلم الذكي</div>
+          <div class="d">١٨ نوفمبر ٢٠٢٥</div>
+        </div>
+      </div>
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'جلسة ريادة الأعمال كمسار وظيفي')">
+        <img src="images/event-business.jpg" alt="جلسة ريادة الأعمال كمسار وظيفي" data-w="480" data-h="480" onerror="phFallback(this,'صورة الفعالية','gallery')">
+        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
+        <div class="gallery-caption">
+          <div>ريادة الأعمال كمسار وظيفي</div>
+          <div class="d">٦ مايو ٢٠٢٦</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ Footer ============ -->
+<footer class="footer" id="contact">
+  <div class="container">
+    <span class="brand-mark" style="display:inline-flex">ر</span>
+    <p>رهام الزهراني — السنة الأولى في كلية الحاسبات وتقنية المعلومات</p>
+    <div class="footer-links">
+      <a href="mailto:example@example.com"><svg class="icon"><use href="#i-mail"/></svg> البريد الإلكتروني</a>
+      <a href="#"><svg class="icon"><use href="#i-link"/></svg> GitHub</a>
+      <a href="#"><svg class="icon"><use href="#i-link"/></svg> LinkedIn</a>
+    </div>
+    <small>© ٢٠٢٦ رهام الزهراني. جميع الحقوق محفوظة — السنة الأولى في كلية الحاسبات · Portfolio</small>
+  </div>
+</footer>
+
+<!-- ============ Lightbox ============ -->
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة">
+  <button class="lightbox-close" id="lightboxClose" aria-label="إغلاق"><svg class="icon"><use href="#i-x"/></svg></button>
+  <img id="lightboxImg" src="" alt="">
+  <p class="lightbox-caption" id="lightboxCaption"></p>
+</div>
+
+<!-- ============ Back to top ============ -->
+<button class="to-top" id="toTop" aria-label="العودة للأعلى">
+  <svg class="icon"><use href="#i-arrow-up"/></svg>
+</button>
+
+<script>
+/* ============ Placeholder image generator ============ */
+var PH_THEMES = {
+  profile:{from:'#AD0F3D', to:'#FF6F91'},
+  logo:{from:'#7A0E30', to:'#E63462'},
+  cert:{from:'#E63462', to:'#FF9DB8'},
+  gallery:{from:'#AD0F3D', to:'#FF6F91'}
+};
+function phFallback(el, label, kind){
+  el.onerror = null;
+  var theme = PH_THEMES[kind] || PH_THEMES.gallery;
+  var w = parseInt(el.dataset.w || el.getAttribute('width') || 480, 10);
+  var h = parseInt(el.dataset.h || el.getAttribute('height') || 360, 10);
+  var isProfile = kind === 'profile';
+  var icon;
+  if (isProfile){
+    icon = '<circle cx="'+(w/2)+'" cy="'+(h*0.36)+'" r="'+(Math.min(w,h)*0.13)+'" fill="rgba(255,255,255,.85)"/>' +
+           '<path d="M'+(w*0.27)+' '+(h*0.75)+' Q'+(w/2)+' '+(h*0.5)+' '+(w*0.73)+' '+(h*0.75)+'" stroke="rgba(255,255,255,.85)" stroke-width="'+Math.max(5,w*0.018)+'" fill="none" stroke-linecap="round"/>';
+  } else {
+    icon = '<rect x="'+(w*0.32)+'" y="'+(h*0.3)+'" width="'+(w*0.36)+'" height="'+(h*0.3)+'" rx="8" fill="none" stroke="rgba(255,255,255,.85)" stroke-width="'+Math.max(3,w*0.012)+'"/>' +
+           '<circle cx="'+(w*0.42)+'" cy="'+(h*0.4)+'" r="'+(Math.min(w,h)*0.032)+'" fill="rgba(255,255,255,.85)"/>' +
+           '<path d="M'+(w*0.32)+' '+(h*0.58)+' L'+(w*0.44)+' '+(h*0.46)+' L'+(w*0.52)+' '+(h*0.54)+' L'+(w*0.6)+' '+(h*0.46)+' L'+(w*0.68)+' '+(h*0.6)+'" stroke="rgba(255,255,255,.85)" stroke-width="'+Math.max(3,w*0.012)+'" fill="none" stroke-linecap="round" stroke-linejoin="round"/>';
+  }
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 '+w+' '+h+'">' +
+    '<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1">' +
+    '<stop offset="0" stop-color="'+theme.from+'"/><stop offset="1" stop-color="'+theme.to+'"/>' +
+    '</linearGradient></defs>' +
+    '<rect width="100%" height="100%" fill="url(#g)"/>' +
+    icon +
+    '<text x="50%" y="'+(h*0.9)+'" text-anchor="middle" font-family="Tahoma, sans-serif" font-size="'+Math.max(12,w*0.045)+'" fill="rgba(255,255,255,.92)">'+label+'</text>' +
+    '</svg>';
+  el.src = 'data:image/svg+xml,' + encodeURIComponent(svg);
+}
+
+document.addEventListener('DOMContentLoaded', function(){
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- Theme toggle ---------- */
+  var themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', function(){
+    var current = document.documentElement.getAttribute('data-theme');
+    var next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    try{ localStorage.setItem('theme', next); }catch(e){}
+  });
+
+  /* ---------- Mobile menu ---------- */
+  var burger = document.getElementById('navBurger');
+  var mobileMenu = document.getElementById('mobileMenu');
+  var mobileClose = document.getElementById('mobileMenuClose');
+  function closeMobile(){ mobileMenu.classList.remove('open'); burger.setAttribute('aria-expanded','false'); }
+  burger.addEventListener('click', function(){
+    var open = mobileMenu.classList.toggle('open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  mobileClose.addEventListener('click', closeMobile);
+  mobileMenu.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeMobile); });
+
+  /* ---------- Sticky nav shadow ---------- */
+  var nav = document.getElementById('siteNav');
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+    toTop.classList.toggle('show', window.scrollY > 500);
+  }, { passive:true });
+
+  toTop.addEventListener('click', function(){
+    window.scrollTo({ top:0, behavior: reduceMotion ? 'auto' : 'smooth' });
+  });
+
+  /* ---------- Active nav link on scroll ---------- */
+  var navLinks = document.querySelectorAll('.nav-link');
+  var sections = Array.prototype.slice.call(document.querySelectorAll('main section[id]'));
+  if ('IntersectionObserver' in window){
+    var navObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if (entry.isIntersecting){
+          navLinks.forEach(function(link){
+            link.classList.toggle('active', link.dataset.target === entry.target.id);
+          });
+        }
+      });
+    }, { rootMargin: '-40% 0px -50% 0px' });
+    sections.forEach(function(s){ navObserver.observe(s); });
+
+    /* ---------- Scroll reveal ---------- */
+    var revealObserver = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry, i){
+        if (entry.isIntersecting){
+          entry.target.classList.add('in');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold:.12 });
+    document.querySelectorAll('.reveal').forEach(function(el, i){
+      el.style.transitionDelay = reduceMotion ? '0s' : (Math.min(i % 4, 3) * 0.08) + 's';
+      revealObserver.observe(el);
+    });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+  }
+
+  /* ---------- Hero typewriter ---------- */
+  var roles = [
+    'طالبة نظم معلومات حاسوبية',
+    'متطوعة بشغف وحب للأثر الإيجابي'
+  ];
+  
+  var typeEl = document.getElementById('typeTarget');
+  if (reduceMotion){
+    typeEl.textContent = roles[0];
+  } else {
+    var rIndex = 0, charIndex = 0, deleting = false;
+    function tick(){
+      var word = roles[rIndex];
+      if (!deleting){
+        charIndex++;
+        typeEl.textContent = word.slice(0, charIndex);
+        if (charIndex === word.length){ deleting = true; setTimeout(tick, 1900); return; }
+      } else {
+        charIndex--;
+        typeEl.textContent = word.slice(0, charIndex);
+        if (charIndex === 0){ deleting = false; rIndex = (rIndex + 1) % roles.length; }
+      }
+      setTimeout(tick, deleting ? 30 : 55);
+    }
+    tick();
+  }
+
+  /* ---------- GPA ring count-up ---------- */
+  var gpaRing = document.getElementById('gpaRing');
+  var gpaCircle = document.getElementById('gpaCircle');
+  var gpaNum = document.getElementById('gpaNum');
+  var gpaArabicDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+  function toArabicNumber(str){
+    return str.replace(/[0-9]/g, function(d){ return gpaArabicDigits[+d]; });
+  }
+  var gpaAnimated = false;
+  function animateGpa(){
+    if (gpaAnimated) return;
+    gpaAnimated = true;
+    var target = 4.93, circumference = 263.9;
+    var duration = reduceMotion ? 1 : 2500;
+    var start = null;
+    function frame(ts){
+      if (!start) start = ts;
+      var p = Math.min((ts - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      var value = target * eased;
+      gpaNum.textContent = toArabicNumber(value.toFixed(2));
+      gpaCircle.style.strokeDashoffset = circumference - (circumference * (value / 5));
+      if (p < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  if ('IntersectionObserver' in window){
+    new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){ 
+        if (entry.isIntersecting) {
+          // أضفنا تأخير بسيط هنا لتلاحظي الحركة بعينكِ عند فتح الصفحة
+          setTimeout(animateGpa, 1500); 
+        } 
+      });
+    }, { threshold:.4 }).observe(gpaRing);
+  } else { 
+    setTimeout(animateGpa, 1500); 
+  }
+
+
+  /* ---------- Flip cards (click + keyboard already inline) ---------- */
+  document.querySelectorAll('.flip-card').forEach(function(card){
+    card.addEventListener('click', function(e){
+      if (e.target.closest('a, .tl-link')) return;
+    });
+  });
+
+  /* ---------- Lightbox ---------- */
+  window.openLightbox = function(src, caption){
+    var lb = document.getElementById('lightbox');
+    document.getElementById('lightboxImg').src = src;
+    document.getElementById('lightboxImg').alt = caption || '';
+    document.getElementById('lightboxCaption').textContent = caption || '';
+    lb.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  };
+  function closeLightbox(){
+    var lb = document.getElementById('lightbox');
+    lb.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  document.getElementById('lightbox').addEventListener('click', function(e){
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){
+      closeLightbox();
+      closeMobile();
+    }
+  });
+
+  /* ---------- Subtle parallax on hero blobs ---------- */
+  if (!reduceMotion && window.matchMedia('(pointer:fine)').matches){
+    var blob1 = document.getElementById('blob1');
+    var blob2 = document.getElementById('blob2');
+    window.addEventListener('mousemove', function(e){
+      var x = (e.clientX / window.innerWidth - 0.5);
+      var y = (e.clientY / window.innerHeight - 0.5);
+      blob1.style.transform = 'translate(' + (x * -24) + 'px,' + (y * -24) + 'px)';
+      blob2.style.transform = 'translate(' + (x * 20) + 'px,' + (y * 20) + 'px)';
+    }, { passive:true });
+  }
+});
+</script>
+
+</body>
+</html>
