@@ -403,11 +403,54 @@ ul{ list-style:none; }
 .footer small{ color:var(--text-muted); display:block; margin-top:1.2rem; font-size:.78rem; }
 
 /* ============ Responsive tweaks ============ */
-@media (max-width:540px){
+/*@media (max-width:540px){
   .badge-chip.uni, .badge-chip.major{ position:static; margin-top:.8rem; display:inline-flex; }
   .hero-visual{ display:flex; flex-direction:column; align-items:center; }
   .gpa-ring{ position:static; margin-top:1.4rem; }
+}*/
+
+  @media (max-width: 540px) {
+  /* 1. جعل الحاضن لوحة رسم مرنة وموسطة في الجوال */
+  .hero-visual {
+    position: relative;
+    display: block;
+    width: 100%;
+    max-width: 310px; /* حجم مدروس لعرض الصورة ليمنع خروج الأزرار خارج شاشة الجوال */
+    margin: 0 auto;
+  }
+
+  /* 2. بطاقة الجامعة (أعلى اليمين) */
+  .badge-chip.uni {
+    position: absolute !important;
+    top: 8% !important;
+    inset-inline-start: -8% !important; /* تقليل الخروج لليمين ليناسب الشاشة الضيقة */
+    font-size: 0.72rem; /* تصغير الخط قليلاً */
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* 3. بطاقة التخصص (منتصف اليسار) */
+  .badge-chip.major {
+    position: absolute !important;
+    top: 58% !important; 
+    inset-inline-end: -10% !important; /* تقليل الخروج لليسار ليناسب الشاشة الضيقة */
+    font-size: 0.72rem;
+    padding: 0.45rem 0.75rem;
+  }
+
+  /* 4. دائرة المعدل (أسفل اليمين) */
+  .gpa-ring {
+    position: absolute !important;
+    bottom: -10px !important;
+    inset-inline-start: -5px !important; /* تثبيتها في الزاوية السفلية */
+    margin: 0;
+    transform: scale(0.82); /* تصغير حجم الدائرة لتتناسب مع أبعاد الجوال */
+    transform-origin: bottom inset-inline-start;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }
+  
 </style>
 </head>
 <body>
