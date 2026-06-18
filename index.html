@@ -450,6 +450,25 @@ ul{ list-style:none; }
     justify-content: center;
   }
 }
+
+  @media (max-width: 540px) {
+  /* --- كود تمديد الكاردات في الجوال فقط --- */
+  
+  .timeline {
+    padding-inline-end: 0.5rem; /* تقليل الهامش الجانبي لتعطي الكارد مساحة أكبر */
+    width: 100%;
+  }
+
+  .timeline-item {
+    padding-inline-start: 1.8rem; /* تقريب الخط الزمني قليلاً لكسب مساحة إضافية للنص */
+    width: 100%;
+  }
+
+  .tl-card {
+    width: 100%;
+    padding: 1.2rem; /* تقليل الحشو الداخلي للكارد ليصبح النص ممتداً ومريحاً في الشاشات الضيقة */
+  }
+}
   
 </style>
 </head>
