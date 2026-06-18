@@ -308,6 +308,16 @@ ul{ list-style:none; }
 .tl-gallery{ display:grid; grid-template-columns:repeat(auto-fit, minmax(90px,1fr)); gap:.65rem; margin-top:1.1rem; }
 .tl-gallery img{ aspect-ratio:1; object-fit:cover; border-radius:11px; cursor:zoom-in; transition:transform .3s; }
 .tl-gallery img:hover{ transform:scale(1.05); }
+.tl-gallery:has(img:only-child) {
+  display: flex !important;
+  justify-content: center; /* توسيط الشهادة الحالية داخل الكارد */
+  margin-top: 1.1rem;}
+.tl-gallery img:only-child {
+  width: 100% !important;
+  max-width: 350px !important; /* الحجم المثالي للشهادة في اللاب توب */
+  height: auto !important;     /* إلغاء الـ aspect-ratio: 1 لكي تظهر كاملة مستطيلة */
+  aspect-ratio: auto !important; 
+  object-fit: contain !important;}
 .tl-link{
   display:inline-flex; gap:.45rem; align-items:center; margin-top:1.1rem; font-weight:600;
   color:var(--rose); font-size:.9rem;
