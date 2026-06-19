@@ -318,6 +318,15 @@ ul{ list-style:none; }
   height: auto !important;     /* إلغاء الـ aspect-ratio: 1 لكي تظهر كاملة مستطيلة */
   aspect-ratio: auto !important; 
   object-fit: contain !important;}
+
+  @media (min-width: 1020px) {
+  .tl-gallery img:only-child {
+    /* تكبير الشهادة فقط في الشاشة الكاملة لتجاري حجم كروت النوادي الكبيرة */
+    max-width: 480px !important; 
+    height: 340px !important; 
+  }
+}
+  
 .tl-link{
   display:inline-flex; gap:.45rem; align-items:center; margin-top:1.1rem; font-weight:600;
   color:var(--rose); font-size:.9rem;
