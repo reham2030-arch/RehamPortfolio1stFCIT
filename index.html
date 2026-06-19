@@ -1082,12 +1082,12 @@ document.addEventListener('DOMContentLoaded', function(){
       entries.forEach(function(entry){ 
         if (entry.isIntersecting) {
           // أضفنا تأخير بسيط هنا لتلاحظي الحركة بعينكِ عند فتح الصفحة
-          setTimeout(animateGpa, 1500); 
+          setTimeout(animateGpa, 1000); 
         } 
       });
     }, { threshold:.4 }).observe(gpaRing);
   } else { 
-    setTimeout(animateGpa, 1500); 
+    setTimeout(animateGpa, 1000); 
   }
 
 
