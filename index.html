@@ -371,11 +371,6 @@ ul{ list-style:none; }
   background:linear-gradient(to top, rgba(10,4,6,.82), transparent); color:#fff;
 }
 .gallery-caption .d{ font-family:var(--font-body); font-size:.74rem; opacity:.85; margin-top:.2rem; }
-.gallery-plus{
-  position:absolute; top:.8rem; inset-inline-end:.8rem; width:36px; height:36px; border-radius:50%;
-  background:rgba(255,255,255,.18); backdrop-filter:blur(8px); display:flex; align-items:center;
-  justify-content:center; color:#fff; border:1px solid rgba(255,255,255,.32);
-}
 
 /* ============ Lightbox ============ */
 .lightbox{
@@ -413,13 +408,7 @@ ul{ list-style:none; }
 .footer small{ color:var(--text-muted); display:block; margin-top:1.2rem; font-size:.78rem; }
 
 /* ============ Responsive tweaks ============ */
-/*@media (max-width:540px){
-  .badge-chip.uni, .badge-chip.major{ position:static; margin-top:.8rem; display:inline-flex; }
-  .hero-visual{ display:flex; flex-direction:column; align-items:center; }
-  .gpa-ring{ position:static; margin-top:1.4rem; }
-}*/
-
-  @media (max-width: 540px) {
+@media (max-width: 540px) {
   /* 1. جعل الحاضن لوحة رسم مرنة وموسطة في الجوال */
   .hero-visual {
     position: relative;
@@ -461,7 +450,7 @@ ul{ list-style:none; }
   }
 }
 
-  @media (max-width: 540px) {
+@media (max-width: 540px) {
   /* --- كود تمديد الكاردات في الجوال فقط --- */
   
   .timeline {
@@ -479,7 +468,8 @@ ul{ list-style:none; }
     padding: 1.2rem !important; /* تقليل الحشو الداخلي للكارد ليصبح النص ممتداً ومريحاً في الشاشات الضيقة */
   }
 }
-  
+
+
 </style>
 </head>
 <body>
@@ -569,12 +559,12 @@ ul{ list-style:none; }
       <h1>رهام الزهراني</h1>
       <p class="hero-role"><span id="typeTarget"></span><span class="cursor" aria-hidden="true"></span></p>
       <p class="bio">
-        طالبة جامعية طموحة وكلّي شغف بالعمل التطوعي والقيادة، دائماً أحب أبادر وأصنع بيئة إيجابية تترك أثراً ايجابيًا في المكان.
+        طالبة جامعية طموحة وكلّي شغف بالعمل التطوعي والقيادة، دائماً أحب أبادر وأصنع بيئة إيجابية تترك أثراً.
         عندي حس عالٍ بالمسؤولية والاهتمام بتفاصيل العمل، وتهمني الرحلة والتجارب التي أعيشها أكثر من النتيجة نفسها.
-        دائماً أسعى لأكون نسخة أفضل من نفسي، وأحب أردد: "الحياة حلوة" — وهي فعلاً حلوة!
+        دائماً أسعى لأكون نسخة أفضل من نفسي، وأحب أردد: "الحياة حلوة" وهي فعلاً حلوة!
       </p>
       <div class="hero-ctas">
-        <a href="#Clubs-Volunteering" class="btn btn-primary">استكشفي رحلتي <svg class="icon"><use href="#i-chevron-down"/></svg></a>
+        <a href="#Clubs-Volunteering" class="btn btn-primary">استكشف رحلتي <svg class="icon"><use href="#i-chevron-down"/></svg></a>
         <a href="#contact" class="btn btn-ghost">تواصل معي</a>
       </div>
       <div class="hero-stats">
@@ -621,7 +611,7 @@ ul{ list-style:none; }
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon"><use href="#i-bulb"/></svg> مهاراتي</span>
       <h2>خليط بين الجانب الإنساني والتقني</h2>
-      <p>مهارات بنيتها وطوّرتها من خلال القيادة والتطوع والمشاريع التقنية هذا العام</p>
+      <p>مهارات بنيتها وطوّرتها من خلال القيادة والتطوع والمشاريع المختلفة لهذا العام</p>
     </div>
     <div class="skills-grid">
       <div class="skill-panel reveal">
@@ -699,10 +689,10 @@ ul{ list-style:none; }
             <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥ – الآن</span>
           </div>
           <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg> تقديم وإعداد ورشة التخطيط الفعّال المصاحبة لمسابقة أفضل مقترح (٢٧ نوفمبر ٢٠٢٥)</li>
-            <li><svg class="icon"><use href="#i-check"/></svg> بناء واجهة ذكية وتفاعلية لبوث النادي في معرض TechHub (٢٦ – ٢٩ أبريل ٢٠٢٦)</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> تقديم وإعداد ورشة التخطيط الفعّال ومسابقة أفضل مقترح (٢٧ نوفمبر ٢٠٢٥)</li>
+            <li><svg class="icon"><use href="#i-check"/></svg> بناء واجهات تفاعلية لبوث النادي في معرض TechHub (٢٦ – ٢٩ أبريل ٢٠٢٦)</li>
           </ul>
-          <p class="tl-note">تطوير واجهات بسيطة وحيّة لتسجيل الحضور وتحليل الإحصائيات الفورية بلغة Python ومكتبة Streamlit، مع رفع المشروع ومزامنته عبر GitHub.</p>
+          <p class="tl-note">تطوير واجهات بسيطة وحيّة لتسجيل حضور الزوار للبوث وتحليل الإحصائيات الفورية بلغة Python ومكتبة Streamlit، مع رفع المشروع ومزامنته عبر GitHub.</p>
           <div class="tl-gallery">
             <img src="DSCworkshop.jpg" alt="ورشة التخطيط الفعّال" data-w="300" data-h="300" onerror="phFallback(this,'الورشة','gallery')" onclick="openLightbox(this.src,'ورشة التخطيط الفعّال')">
             <img src="DSCcompitition.jpg" alt="مسابقة أفضل مقترح" data-w="300" data-h="300" onerror="phFallback(this,'المسابقة','gallery')" onclick="openLightbox(this.src,'مسابقة أفضل مقترح')">
@@ -725,7 +715,7 @@ ul{ list-style:none; }
             <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> أكتوبر ٢٠٢٥ – الآن</span>
           </div>
           <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg> المساهمة في تطوير واجهات تفاعلية لتسجيل الحضور وتحليل الإحصائيات بلغة Python ومكتبة Streamlit</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</li>
           </ul>
           <div class="tl-gallery">
             <img src="IEEEcertificate.jpg" alt="شهادة نادي IEEE" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة المشاركة في نادي IEEE')">
@@ -747,7 +737,7 @@ ul{ list-style:none; }
             <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> يناير ٢٠٢٦ – مايو ٢٠٢٦</span>
           </div>
           <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg> المساهمة في تنظيم الفرص التطوعية ضمن أسبوع الملك العالمي، والحصول على شهادة خبرة عمل تطوعي معتمدة</li>
+            <li><svg class="icon"><use href="#i-check"/></svg>المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</li>
           </ul>
           <div class="tl-gallery">
             <img src="Bashoshcertificate.jpg" alt="شهادة فريق بشوش" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة خبرة العمل التطوعي')">
@@ -765,7 +755,7 @@ ul{ list-style:none; }
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon"><use href="#i-award"/></svg> القسم الثاني</span>
       <h2>المسابقات والهاكاثونات</h2>
-      <p>تحديات خضتها وأفكار تحوّلت إلى نماذج حقيقية — اضغطي على البطاقة لعرض التفاصيل</p>
+      <p>تحديات وتجارب خضتها وصقلت مهاراتي</p>
     </div>
 
     <div class="comp-grid">
@@ -777,8 +767,8 @@ ul{ list-style:none; }
             <div class="tl-logo"><img src="SportTechlogo.jpg" alt="شعار هاكاثون SportTech" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
             <h3>هاكاثون SportTech</h3>
             <span class="proj">Saudi Heritage Step</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg>نوفمبر ٢٠٢٥</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٢٠ نوفمبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
           </div>
           <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
             <h4>عن المشروع</h4>
@@ -795,8 +785,8 @@ ul{ list-style:none; }
             <div class="tl-logo"><img src="BuildTheVibelogo.jpg" alt="شعار تحدي Build the Vibe" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
             <h3>تحدي Build the Vibe</h3>
             <span class="proj">موقع Jeddah Art Gallery</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg>مايو ٢٠٢٦</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ١١ - ١٢ مايو ٢٠٢٦ </span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
           </div>
           <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
             <h4>عن المشروع</h4>
@@ -813,8 +803,8 @@ ul{ list-style:none; }
             <div class="tl-logo"><img src="DevSummitChallengelogo.jpg" alt="شعار تحدي Dev Summit Challenge" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
             <h3>تحدي Dev Summit Challenge</h3>
             <span class="proj">تحديات برمجية بلغة Java</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg>ابريل ٢٠٢٦</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٢٦ ابريل ٢٠٢٦</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
           </div>
           <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
             <h4>عن المشروع</h4>
@@ -831,8 +821,8 @@ ul{ list-style:none; }
             <div class="tl-logo"><img src="Spacethonlogo.jpg" alt="شعار هاكاثون Spacethon" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
             <h3>هاكاثون Spacethon</h3>
             <span class="proj">Inspiring Saudi Space Journey</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> اكتوبر ٢٠٢٥</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغطي لعرض التفاصيل</div>
+            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٦ - ٧ اكتوبر ٢٠٢٥</span>
+            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
           </div>
           <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
             <h4>عن المشروع</h4>
@@ -851,41 +841,37 @@ ul{ list-style:none; }
   <div class="container">
     <div class="section-head reveal">
       <span class="eyebrow"><svg class="icon"><use href="#i-calendar"/></svg> القسم الثالث</span>
-      <h2>لقطات من رحلتي</h2>
-      <p>فعاليات ومحطات لا تُنسى من السنة الأولى</p>
+      <h2>احداث متنوعة</h2>
+      <p>فعاليات حضرتها واضافت لي الكثير</p>
     </div>
 
     <div class="gallery">
-      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'المؤتمر الأول لريادة الأعمال — مركز الملك فيصل للمؤتمرات')">
+      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'المؤتمر الأول لريادة الأعمال')">
         <img src="Innovation.jpg" alt="المؤتمر الأول لريادة الأعمال" data-w="480" data-h="420" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
         <div class="gallery-caption">
           <div>المؤتمر الأول لريادة الأعمال</div>
-          <div class="d">مركز الملك فيصل للمؤتمرات · ٢٢ أكتوبر ٢٠٢٥</div>
+          <div class="d">مركز الملك فيصل للمؤتمرات • ٢٢ أكتوبر ٢٠٢٥</div>
         </div>
       </div>
       <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'فعاليات معرض تيك هب')">
         <img src="TechHub.jpg" alt="فعاليات معرض تيك هب" data-w="480" data-h="560" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
         <div class="gallery-caption">
           <div>فعاليات معرض تيك هب</div>
-          <div class="d">٢٦ – ٢٩ أبريل ٢٠٢٦</div>
+          <div class="d">كلية الحاسبات وتقنية المعلومات • ٢٦ -٢٩ أبريل ٢٠٢٦</div>
         </div>
       </div>
       <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'هاكاثون نهج للتعلم الذكي')">
         <img src="HackathonNohj.jpg" alt="هاكاثون نهج للتعلم الذكي" data-w="480" data-h="360" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
         <div class="gallery-caption">
           <div>هاكاثون نهج للتعلم الذكي</div>
-          <div class="d">١٨ نوفمبر ٢٠٢٥</div>
+          <div class="d">كلية الحاسبات وتقنية المعلومات • ١٨ نوفمبر ٢٠٢٥</div>
         </div>
       </div>
       <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'جلسة ريادة الأعمال كمسار وظيفي')">
         <img src="Business.jpg" alt="جلسة ريادة الأعمال كمسار وظيفي" data-w="480" data-h="480" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <span class="gallery-plus"><svg class="icon" style="width:1em;height:1em"><use href="#i-plus"/></svg></span>
         <div class="gallery-caption">
           <div>ريادة الأعمال كمسار وظيفي</div>
-          <div class="d">٦ مايو ٢٠٢٦</div>
+          <div class="d">كلية الاقتصاد والإدارة • ٦ مايو ٢٠٢٦</div>
         </div>
       </div>
     </div>
@@ -897,10 +883,10 @@ ul{ list-style:none; }
 <!-- ============ Footer ============ -->
 <footer class="footer" id="contact">
   <div class="container">
-<span class="brand-mark">
+ <span class="brand-mark">
         <img src="logo.png" alt="شعار رهام الزهراني" class="brand-logo-img">
       </span>
-     <div class="footer-links">
+      <div class="footer-links">
       <a href="https://x.com/requ_2030?s=11" target="_blank"><svg class="icon"><use href="#i-link"/></svg>X</a>
       <a href="https://www.linkedin.com/in/reham-alzahrani-495327234?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><svg class="icon"><use href="#i-link"/></svg>LinkedIn</a>
       <a href="mailto:alzahrani.500000@gmail.com" target="_blank"><svg class="icon"><use href="#i-mail"/></svg> البريد الإلكتروني</a>
