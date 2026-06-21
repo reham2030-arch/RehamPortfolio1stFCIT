@@ -136,13 +136,20 @@ ul{ list-style:none; }
 .nav-link.active, .nav-link:hover{ color:var(--text); }
 .nav-link.active::after{ transform:scaleX(1); }
 .nav-actions{ display:flex; align-items:center; gap:.6rem; }
-.theme-toggle, .nav-burger{
+.theme-toggle, .nav-burger, .lang-toggle-btn {
   width:42px; height:42px; border-radius:50%; border:1px solid var(--border);
   display:flex; align-items:center; justify-content:center; transition:transform .25s, background .25s;
 }
 .nav-burger{ border-radius:12px; }
-.theme-toggle:hover, .nav-burger:hover{ background:var(--grad-soft); transform:translateY(-2px); }
-.theme-toggle .icon-moon, .theme-toggle .icon-sun{ color:var(--rose); }
+.lang-toggle-btn {
+  background: transparent;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: bold;
+  font-family: sans-serif; /* لضمان ثبات شكل الحروف */
+}
+.theme-toggle:hover, .nav-burger:hover, .lang-toggle-btn:hover { background:var(--grad-soft); transform:translateY(-2px); }
+.theme-toggle .icon-moon, .theme-toggle .icon-sun, .lang-toggle-btn .lang-text { color:var(--rose); }
 [data-theme="light"] .theme-toggle .icon-sun{ display:none; }
 [data-theme="dark"] .theme-toggle .icon-moon{ display:none; }
 @media (min-width:880px){ .nav-links{ display:flex; } .nav-burger{ display:none; } }
@@ -319,14 +326,14 @@ ul{ list-style:none; }
   aspect-ratio: auto !important; 
   object-fit: contain !important;}
 
-  @media (min-width: 1020px) {
+@media (min-width: 1020px) {
   .tl-gallery img:only-child {
     /* تكبير الشهادة فقط في الشاشة الكاملة لتجاري حجم كروت النوادي الكبيرة */
     max-width: 480px !important; 
     height: 340px !important; 
   }
 }
-  
+
 .tl-link{
   display:inline-flex; gap:.45rem; align-items:center; margin-top:1.1rem; font-weight:600;
   color:var(--rose); font-size:.9rem;
@@ -370,17 +377,19 @@ ul{ list-style:none; }
   display: grid; 
   grid-template-columns: repeat(1, 1fr); 
   column-gap: 0.9rem;
-  row-gap: 0.4rem; 
+  row-gap: 0.4rem;
 }
+
 @media (min-width: 640px) { .gallery { grid-template-columns: repeat(2, 1fr); column-gap: 0.6rem;
   row-gap: 0.4rem; } }
 @media (min-width: 1020px) { .gallery { grid-template-columns: repeat(4, 1fr); } }
 
 .gallery-item{
   break-inside:avoid; margin-bottom:1.3rem; position:relative; border-radius:var(--radius-md);
-  overflow:hidden; box-shadow:var(--shadow); cursor:zoom-in; height: 300px;
+  overflow:hidden; box-shadow:var(--shadow); cursor:zoom-in; height: 300px; 
 }
-.gallery-item img{ width:100%; transition:transform .45s; height: 100%; object-fit: cover;  }
+.gallery-item img{ width:100%; transition:transform .45s; height: 100%; object-fit: cover; }
+
 .gallery-item:hover img{ transform:scale(1.07); }
 .gallery-caption{
   position:absolute; inset-inline:0; bottom:0; padding:1.1rem;
@@ -485,10 +494,24 @@ ul{ list-style:none; }
   }
 }
 
+/* ١. إخفاء النسخة الإنجليزية بشكل افتراضي عند بداية تحميل الموقع */
+.lang-en {
+    display: none !important;
+}
+
+/* ٢. عندما يضغط المستخدم على الزر وتتحول لغة الصفحة إلى إنجليزية (إخفاء العربي وإظهار الإنجليزي) */
+html[lang="en"] .lang-ar { 
+    display: none !important; 
+}
+html[lang="en"] .lang-en { 
+    display: inline-block !important; /* استخدمنا inline-block لأن العنصر span */
+}
+
 
 </style>
 </head>
 <body>
+
 
 <a href="#main" class="skip-link">تخطي إلى المحتوى</a>
 
@@ -531,20 +554,31 @@ ul{ list-style:none; }
       <span class="brand-mark">
         <img src="logo.png" alt="شعار رهام الزهراني" class="brand-logo-img">
       </span>
-      <span class="brand-name">رهام الزهراني</span>
+      <span class="brand-name lang-ar">رهام الزهراني</span>
+      <span class="brand-name lang-en">Reham Alzahrani</span>
     </a>
     <nav class="nav-links" aria-label="روابط رئيسية">
-      <a class="nav-link" href="#Home" data-target="Home">الرئيسية</a>
-      <a class="nav-link" href="#skills" data-target="skills">المهارات</a>
-      <a class="nav-link" href="#Clubs-Volunteering" data-target="Clubs-Volunteering">الأندية والتطوع</a>
-      <a class="nav-link" href="#competitions" data-target="competitions">المسابقات</a>
-      <a class="nav-link" href="#VariousEvents" data-target="VariousEvents">أحداث متنوعة</a>
+      <a class="nav-link lang-ar" href="#Home" data-target="Home">الرئيسية</a>
+      <a class="nav-link lang-ar" href="#skills" data-target="skills">المهارات</a>
+      <a class="nav-link lang-ar" href="#Clubs-Volunteering" data-target="Clubs-Volunteering">الأندية والتطوع</a>
+      <a class="nav-link lang-ar" href="#competitions" data-target="competitions">المسابقات</a>
+      <a class="nav-link lang-ar" href="#VariousEvents" data-target="VariousEvents">أحداث متنوعة</a>
+      <a class="nav-link lang-en" href="#Home" data-target="Home">Home</a>
+      <a class="nav-link lang-en" href="#skills" data-target="skills">Skills</a>
+      <a class="nav-link lang-en" href="#Clubs-Volunteering" data-target="Clubs-Volunteering">Clubs & Volunteering</a>
+      <a class="nav-link lang-en" href="#competitions" data-target="competitions">Competitions</a>
+      <a class="nav-link lang-en" href="#VariousEvents" data-target="VariousEvents">Various Events</a>
     </nav>
     <div class="nav-actions">
       <button class="theme-toggle" id="themeToggle" aria-label="تبديل الوضع الليلي والنهاري">
         <svg class="icon icon-moon"><use href="#i-moon"/></svg>
         <svg class="icon icon-sun"><use href="#i-sun"/></svg>
       </button>
+
+      <button class="lang-toggle-btn" onclick="switchSiteLanguage()" aria-label="تبديل اللغة">
+        <span class="lang-text">EN</span>
+      </button>
+
       <button class="nav-burger" id="navBurger" aria-label="فتح القائمة" aria-expanded="false">
         <svg class="icon"><use href="#i-menu"/></svg>
       </button>
@@ -556,11 +590,16 @@ ul{ list-style:none; }
   <button class="mobile-menu-close" id="mobileMenuClose" aria-label="إغلاق القائمة">
     <svg class="icon"><use href="#i-x"/></svg>
   </button>
-  <a href="#Home" class="mobile-link">الرئيسية</a>
-  <a href="#skills" class="mobile-link">المهارات</a>
-  <a href="#Clubs-Volunteering" class="mobile-link">الأندية والتطوع</a>
-  <a href="#competitions" class="mobile-link">المسابقات</a>
-  <a href="#VariousEvents" class="mobile-link">أحداث متنوعة</a>
+  <a href="#Home" class="mobile-link lang-ar">الرئيسية</a>
+    <a href="#Home" class="mobile-link lang-en">Home</a>
+  <a href="#skills" class="mobile-link lang-ar">المهارات</a>
+    <a href="#skills" class="mobile-link lang-en">Skills</a>
+  <a href="#Clubs-Volunteering" class="mobile-link lang-ar">الأندية والتطوع</a>
+    <a href="#Clubs-Volunteering" class="mobile-link lang-en">Clubs & Volunteering</a>
+  <a href="#competitions" class="mobile-link lang-ar">المسابقات</a>
+    <a href="#competitions" class="mobile-link lang-en">Competitions</a>
+  <a href="#VariousEvents" class="mobile-link lang-ar">أحداث متنوعة</a>
+    <a href="#VariousEvents" class="mobile-link lang-en">Various Events</a>
 </div>
 
 <main id="main">
@@ -570,10 +609,12 @@ ul{ list-style:none; }
   <div class="hero-blob b1" id="blob1"></div>
   <div class="hero-blob b2" id="blob2"></div>
   <div class="container hero-grid">
-    <div class="hero-text reveal">
+    <div class="hero-text reveal lang-ar">
       <span class="eyebrow"><svg class="icon"><use href="#i-cap"/></svg>  ملف إنجاز · السنة الأولى في FCIT</span>
       <h1>رهام الزهراني</h1>
-      <p class="hero-role"><span id="typeTarget"></span><span class="cursor" aria-hidden="true"></span></p>
+<p class="hero-role lang-ar">
+  <span id="typeTargetAr"></span><span class="cursor" aria-hidden="true"></span>
+</p>
       <p class="bio">
         طالبة جامعية طموحة وكلّي شغف بالعمل التطوعي والقيادة، دائماً أحب أبادر وأصنع بيئة إيجابية تترك أثراً.
         عندي حس عالٍ بالمسؤولية والاهتمام بتفاصيل العمل، وتهمني الرحلة والتجارب التي أعيشها أكثر من النتيجة نفسها.
@@ -590,13 +631,43 @@ ul{ list-style:none; }
       </div>
     </div>
 
+<div class="hero-text reveal lang-en">
+  <span class="eyebrow"><svg class="icon"><use href="#i-cap"/></svg> Achievement Portfolio · First Year in FCIT</span>
+  <h1>Reham Al-Zahrani</h1>
+
+  <!-- الـ Typewriter الخاص بالإنجليزية إذا كنتِ تستخدمين سكريبت له -->
+  <p class="hero-role lang-en">
+    <span id="typeTargetEn"></span><span class="cursor" aria-hidden="true"></span>
+  </p>
+
+  <p class="bio">
+    An ambitious university student with a deep passion for volunteering and leadership, always eager to take initiative and foster a positive environment that leaves an impact. I possess a high sense of responsibility and a keen eye for detail, valuing the journey and the experiences gained along the way more than just the end result. Striving constantly to become a better version of myself, I love to remind myself: 'Life is beautiful'—and it truly is!
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#Clubs-Volunteering" class="btn btn-primary">Explore My Journey <svg class="icon"><use href="#i-chevron-down"/></svg></a>
+    <a href="#contact" class="btn btn-ghost">Contact Me</a>
+  </div>
+
+  <div class="hero-stats">
+    <span class="stat-pill"><svg class="icon"><use href="#i-users"/></svg> <b>4</b> Clubs & Teams</span>
+    <span class="stat-pill"><svg class="icon"><use href="#i-award"/></svg> <b>4</b> Competitions</span>
+    <span class="stat-pill"><svg class="icon"><use href="#i-calendar"/></svg> <b>4</b> Events</span>
+  </div>
+</div>
+
     <div class="hero-visual reveal">
       <div class="portrait-frame">
         <img src="profile.png" alt="صورة رهام الزهراني" data-w="480" data-h="600"
              onerror="phFallback(this,'صورتك الشخصية','profile')">
       </div>
-      <span class="badge-chip uni"><svg class="icon"><use href="#i-cap"/></svg> جامعة الملك عبدالعزيز</span>
-      <span class="badge-chip major"><svg class="icon"><use href="#i-code"/></svg> نظم معلومات حاسوبية</span>
+      <!-- جامعة الملك عبدالعزيز -->
+<span class="badge-chip uni lang-ar"><svg class="icon"><use href="#i-cap"/></svg> جامعة الملك عبدالعزيز</span>
+<span class="badge-chip uni lang-en"><svg class="icon" style="margin-right: 6px; vertical-align: middle;"><use href="#i-cap"/></svg> King Abdulaziz University</span>
+
+<!-- نظم معلومات حاسوبية -->
+<span class="badge-chip major lang-ar"><svg class="icon"><use href="#i-code"/></svg> نظم معلومات حاسوبية</span>
+<span class="badge-chip major lang-en"><svg class="icon" style="margin-right: 6px; vertical-align: middle;"><use href="#i-code"/></svg> Computer Information Systems</span>
       <div class="gpa-ring" id="gpaRing">
         <svg width="100" height="100" viewBox="0 0 100 100">
           <circle cx="50" cy="50" r="42" fill="none" stroke="var(--border)" stroke-width="8"/>
@@ -613,153 +684,373 @@ ul{ list-style:none; }
       </div>
     </div>
   </div>
+  
   <div class="container">
-    <div class="scroll-cue reveal">
-      <span>انزلي للأسفل</span>
-      <svg class="icon"><use href="#i-chevron-down"/></svg>
-    </div>
+  <!-- النسخة العربية -->
+  <div class="scroll-cue reveal lang-ar">
+    <span>انزل للأسفل</span>
+    <svg class="icon"><use href="#i-chevron-down"/></svg>
   </div>
+
+  <!-- النسخة الإنجليزية مع إضافة التوسط المباشر -->
+  <div class="scroll-cue reveal lang-en" style="text-align: center; display: flex; justify-content: center; align-items: center; gap: 6px; width: 100%;">
+    <span>Scroll Down</span>
+    <svg class="icon"><use href="#i-chevron-down"/></svg>
+  </div>
+</div>
+
 </section>
 
 <!-- ============ Skills ============ -->
 <section class="section section--tint" id="skills">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon"><use href="#i-bulb"/></svg> مهاراتي</span>
-      <h2>خليط بين الجانب الإنساني والتقني</h2>
-      <p>مهارات بنيتها وطوّرتها من خلال القيادة والتطوع والمشاريع المختلفة لهذا العام</p>
-    </div>
+  <span class="eyebrow">
+    <svg class="icon"><use href="#i-bulb"/></svg> 
+    <span class="lang-ar">مهاراتي</span>
+    <span class="lang-en">My Skills</span>
+  </span>
+  
+  <h2>
+    <span class="lang-ar">خليط بين الجانب الإنساني والتقني</span>
+    <span class="lang-en">A Blend of Humanity and Technology</span>
+  </h2>
+  
+  <p>
+    <span class="lang-ar">مهارات بنيتها وطوّرتها من خلال القيادة والتطوع والمشاريع المختلفة لهذا العام</span>
+    <span class="lang-en">Skills built and developed through leadership, volunteering, and various projects throughout this year.</span>
+  </p>
+</div>
+  
     <div class="skills-grid">
-      <div class="skill-panel reveal">
-        <h3><span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span> Soft Skills</h3>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-check"/></svg></span><span>المسؤولية العالية والالتزام</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-users"/></svg></span><span>القيادة الهادفة والداعمة</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-shuffle"/></svg></span><span>المرونة والتكيّف</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-bulb"/></svg></span><span>التفكير التحليلي وربط الأفكار</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-clock"/></svg></span><span>إدارة الوقت والتنظيم</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span><span>التعاطف والعمل الجماعي</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-target"/></svg></span><span>التركيز على الجودة وتجربة المستخدم</span></div>
-      </div>
-      <div class="skill-panel reveal">
-        <h3><span class="ic"><svg class="icon"><use href="#i-code"/></svg></span> Practical Skills</h3>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-briefcase"/></svg></span><span>إدارة الموارد البشرية (HR)</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-layout"/></svg></span><span>التخطيط الفعّال وإعداد خطط العمل</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-calendar"/></svg></span><span>إدارة الفعاليات والأنشطة</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-edit"/></svg></span><span>إنشاء المحتوى وإدارته</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-mic"/></svg></span><span>التحدث أمام الجمهور وإدارة الجلسات</span></div>
-        <div class="skill-row"><span class="ic"><svg class="icon"><use href="#i-code"/></svg></span><span>بناء المشاريع (Claude/Gemini) ونشرها على GitHub وVercel</span></div>
-      </div>
+  <div class="skill-panel reveal">
+    <h3>
+      <span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span>
+      <span class="lang-ar">مهارات ناعمة</span>
+      <span class="lang-en">Soft Skills</span>
+    </h3>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-check"/></svg></span>
+      <span class="lang-ar">المسؤولية العالية والالتزام</span>
+      <span class="lang-en">High Responsibility & Commitment</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-users"/></svg></span>
+      <span class="lang-ar">القيادة الهادفة والداعمة</span>
+      <span class="lang-en">Purposeful & Supportive Leadership</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-shuffle"/></svg></span>
+      <span class="lang-ar">المرونة والتكيّف</span>
+      <span class="lang-en">Flexibility & Adaptability</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-bulb"/></svg></span>
+      <span class="lang-ar">التفكير التحليلي وربط الأفكار</span>
+      <span class="lang-en">Analytical Thinking & Concept Linking</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-clock"/></svg></span>
+      <span class="lang-ar">إدارة الوقت والتنظيم</span>
+      <span class="lang-en">Time Management & Organization</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-heart"/></svg></span>
+      <span class="lang-ar">التعاطف والعمل الجماعي</span>
+      <span class="lang-en">Empathy & Teamwork</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-target"/></svg></span>
+      <span class="lang-ar">التركيز على الجودة وتجربة المستخدم</span>
+      <span class="lang-en">Focus on Quality & User Experience</span>
     </div>
   </div>
+
+  <div class="skill-panel reveal">
+    <h3>
+      <span class="ic"><svg class="icon"><use href="#i-code"/></svg></span>
+      <span class="lang-ar">مهارات عملية</span>
+      <span class="lang-en">Practical Skills</span>
+    </h3>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-briefcase"/></svg></span>
+      <span class="lang-ar">إدارة الموارد البشرية (HR)</span>
+      <span class="lang-en">Human Resources Management (HR)</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-layout"/></svg></span>
+      <span class="lang-ar">التخطيط الفعّال وإعداد خطط العمل</span>
+      <span class="lang-en">Effective Planning & Action Plan Development</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-calendar"/></svg></span>
+      <span class="lang-ar">إدارة الفعاليات والأنشطة</span>
+      <span class="lang-en">Event & Activity Management</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-edit"/></svg></span>
+      <span class="lang-ar">إنشاء المحتوى وإدارته</span>
+      <span class="lang-en">Content Creation & Management</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-mic"/></svg></span>
+      <span class="lang-ar">التحدث أمام الجمهور وإدارة الجلسات</span>
+      <span class="lang-en">Public Speaking & Session Moderation</span>
+    </div>
+    
+    <div class="skill-row">
+      <span class="ic"><svg class="icon"><use href="#i-code"/></svg></span>
+      <span class="lang-ar">بناء المشاريع (Claude/Gemini) ونشرها على GitHub وVercel</span>
+      <span class="lang-en">Project Development (Claude/Gemini) & Deployment via GitHub & Vercel</span>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- ============ Clubs & Volunteering ============ -->
 <section class="section" id="Clubs-Volunteering">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon"><use href="#i-users"/></svg> القسم الأول</span>
-      <h2>الأندية والتطوع</h2>
-      <p>الفرق التي انضممت لها والأثر الذي حاولت أن أتركه في كل واحد منها</p>
-    </div>
+  <span class="eyebrow">
+    <svg class="icon"><use href="#i-users"/></svg> 
+    <span class="lang-ar">القسم الأول</span>
+    <span class="lang-en">Part I</span>
+  </span>
+  
+  <h2>
+    <span class="lang-ar">الأندية والتطوع</span>
+    <span class="lang-en">Clubs & Volunteering</span>
+  </h2>
+  
+  <p>
+    <span class="lang-ar">الفرق التي انضممت لها والأثر الذي حاولت أن أتركه في كل واحد منها</span>
+    <span class="lang-en">The teams I joined and the impact I strived to leave in each one.</span>
+  </p>
+</div>
 
     <div class="timeline">
 
       <div class="timeline-item reveal">
-        <span class="timeline-node"></span>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-logo">
-              <img src="EicLogo.jpg" alt="شعار نادي الإبداع الهندسي" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
-            </div>
-            <div class="tl-titles">
-              <h3>نادي الإبداع الهندسي</h3>
-              <span class="tl-role">عضوة ← قائدة الموارد البشرية</span>
-            </div>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥ – مارس ٢٠٢٦</span>
-          </div>
-          <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg> إدارة الحوار في جلسة التعلم المستمر (٢٩ أكتوبر ٢٠٢٥)</li>
-            <li><svg class="icon"><use href="#i-check"/></svg> إجراء مقابلات شخصية لفرز وقبول المتقدمين الجدد للقسم (٩ فبراير ٢٠٢٦)</li>
-            <li><svg class="icon"><use href="#i-check"/></svg> تمثيل بوث النادي في اليوم الهندسي والعمراني (٥ فبراير ٢٠٢٦)</li>
-          </ul>
-          <a href="https://canva.link/sbddx04wdrvjdo6" target="_blank" class="tl-link">مقتطفات من رحلتي القيادية للقسم <svg class="icon"><use href="#i-link"/></svg></a>
-          <div class="tl-gallery">
-            <img src="ContinousLearning.jpg" alt="جلسة التعلم المستمر" data-w="300" data-h="300" onerror="phFallback(this,'التعلم المستمر','gallery')" onclick="openLightbox(this.src,'جلسة التعلم المستمر')">
-            <img src="Intreviews.jpg" alt="المقابلات الشخصية" data-w="300" data-h="300" onerror="phFallback(this,'المقابلات','gallery')" onclick="openLightbox(this.src,'مقابلات قبول المتقدمين الجدد')">
-            <img src="EIC Booth.jpg" alt="بوث اليوم الهندسي" data-w="300" data-h="300" onerror="phFallback(this,'بوث النادي','gallery')" onclick="openLightbox(this.src,'بوث اليوم الهندسي والعمراني')">
-          </div>
-        </div>
+  <span class="timeline-node"></span>
+  <div class="tl-card">
+    <div class="tl-head">
+      <div class="tl-logo">
+        <img src="EicLogo.jpg" alt="Engineering Creativity Club Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Club Logo' : 'شعار النادي', 'logo')">
       </div>
+      <div class="tl-titles">
+        <h3>
+          <span class="lang-ar">نادي الإبداع الهندسي</span>
+          <span class="lang-en">Engineering Innovation Club</span>
+        </h3>
+        <span class="tl-role">
+          <span class="lang-ar">عضوة ← قائدة الموارد البشرية</span>
+          <span class="lang-en">Member → HR Leader</span>
+        </span>
+      </div>
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">سبتمبر ٢٠٢٥ – مارس ٢٠٢٦</span>
+        <span class="lang-en">Sep 2025 – Mar 2026</span>
+      </span>
+    </div>
+    
+    <ul class="tl-list">
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">إدارة الحوار في جلسة التعلم المستمر (٢٩ أكتوبر ٢٠٢٥)</span>
+        <span class="lang-en">Moderated the Continuous Learning session (Oct 29, 2025)</span>
+      </li>
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">إجراء مقابلات شخصية لفرز وقبول المتقدمين الجدد للقسم (٩ فبراير ٢٠٢٦)</span>
+        <span class="lang-en">Conducted personal interviews to screen and recruit new applicants (Feb 9, 2026)</span>
+      </li>
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">تمثيل بوث النادي في اليوم الهندسي والعمراني (٥ فبراير ٢٠٢٦)</span>
+        <span class="lang-en">Represented the club’s booth at the Engineering & Architecture Day (Feb 5, 2026)</span>
+      </li>
+    </ul>
+    
+    <a href="https://canva.link/sbddx04wdrvjdo6" target="_blank" class="tl-link">
+      <span class="lang-ar">مقتطفات من رحلتي القيادية للقسم <svg class="icon"><use href="#i-link"/></svg></span>
+      <span class="lang-en">Glimpses of my leadership journey in the department <svg class="icon"><use href="#i-link"/></svg></span>
+    </a>
+    
+    <div class="tl-gallery">
+      <img src="ContinousLearning.jpg" alt="Continuous Learning Session" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Continuous Learning' : 'التعلم المستمر', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Continuous Learning Session' : 'جلسة التعلم المستمر')">
+      
+      <img src="Intreviews.jpg" alt="Interviews" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Interviews' : 'المقابلات', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Interviews for Recruiting New Applicants' : 'مقابلات قبول المتقدمين الجدد')">
+      
+      <img src="EIC Booth.jpg" alt="Engineering Day Booth" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Club Booth' : 'بوث النادي', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Engineering & Architecture Day Booth' : 'بوث اليوم الهندسي والعمراني')">
+    </div>
+  </div>
+</div>
 
       <div class="timeline-item reveal">
-        <span class="timeline-node"></span>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-logo">
-              <img src="DSClogo.jpg" alt="شعار نادي علم البيانات" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
-            </div>
-            <div class="tl-titles">
-              <h3>نادي علم البيانات</h3>
-              <span class="tl-role">عضوة التخطيط والعلاقات العامة</span>
-            </div>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> سبتمبر ٢٠٢٥ – الآن</span>
-          </div>
-          <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg> تقديم وإعداد ورشة التخطيط الفعّال ومسابقة أفضل مقترح (٢٧ نوفمبر ٢٠٢٥)</li>
-            <li><svg class="icon"><use href="#i-check"/></svg> بناء واجهات تفاعلية لبوث النادي في معرض TechHub (٢٦ – ٢٩ أبريل ٢٠٢٦)</li>
-          </ul>
-          <p class="tl-note">تطوير واجهات بسيطة وحيّة لتسجيل حضور الزوار للبوث وتحليل الإحصائيات الفورية بلغة Python ومكتبة Streamlit، مع رفع المشروع ومزامنته عبر GitHub.</p>
-          <div class="tl-gallery">
-            <img src="DSCworkshop.jpg" alt="ورشة التخطيط الفعّال" data-w="300" data-h="300" onerror="phFallback(this,'الورشة','gallery')" onclick="openLightbox(this.src,'ورشة التخطيط الفعّال')">
-            <img src="DSCcompitition.jpg" alt="مسابقة أفضل مقترح" data-w="300" data-h="300" onerror="phFallback(this,'المسابقة','gallery')" onclick="openLightbox(this.src,'مسابقة أفضل مقترح')">
-            <img src="DSCproject.jpg" alt="مشروع بوث TechHub" data-w="300" data-h="300" onerror="phFallback(this,'المشروع','gallery')" onclick="openLightbox(this.src,'واجهة بوث معرض TechHub')">
-          </div>
-        </div>
+  <span class="timeline-node"></span>
+  <div class="tl-card">
+    <div class="tl-head">
+      <div class="tl-logo">
+        <img src="DSClogo.jpg" alt="Data Science Club Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Club Logo' : 'شعار النادي', 'logo')">
       </div>
+      <div class="tl-titles">
+        <h3>
+          <span class="lang-ar">نادي علم البيانات</span>
+          <span class="lang-en">Data Science Club</span>
+        </h3>
+        <span class="tl-role">
+          <span class="lang-ar">عضوة التخطيط والعلاقات العامة</span>
+          <span class="lang-en">Planning & Public Relations Member</span>
+        </span>
+      </div>
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">سبتمبر ٢٠٢٥ – الآن</span>
+        <span class="lang-en">Sep 2025 – Present</span>
+      </span>
+    </div>
+    
+    <ul class="tl-list">
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">تقديم وإعداد ورشة التخطيط الفعّال ومسابقة أفضل مقترح (٢٧ نوفمبر ٢٠٢٥)</span>
+        <span class="lang-en">Prepared and delivered the Effective Planning workshop & Best Proposal competition (Nov 27, 2025)</span>
+      </li>
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">بناء واجهات تفاعلية لبوث النادي في معرض TechHub (٢٦ – ٢٩ أبريل ٢٠٢٦)</span>
+        <span class="lang-en">Built interactive interfaces for the club's booth at the TechHub exhibition (Apr 26 – 29, 2026)</span>
+      </li>
+    </ul>
+    
+    <p class="tl-note">
+      <span class="lang-ar">تطوير واجهات بسيطة وحيّة لتسجيل حضور الزوار للبوث وتحليل الإحصائيات الفورية بلغة Python ومكتبة Streamlit، مع رفع المشروع ومزامنته عبر GitHub.</span>
+      <span class="lang-en">Developed simple, live interfaces to register booth visitor attendance and analyze real-time statistics using Python and Streamlit, with the project hosted and synchronized via GitHub.</span>
+    </p>
+    
+    <div class="tl-gallery">
+      <!-- الصورة الأولى -->
+      <img src="DSCworkshop.jpg" alt="Effective Planning Workshop" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Workshop' : 'الورشة', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Effective Planning Workshop' : 'ورشة التخطيط الفعّال')">
+      
+      <!-- الصورة الثانية -->
+      <img src="DSCcompitition.jpg" alt="Best Proposal Competition" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Competition' : 'المسابقة', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Best Proposal Competition' : 'مسابقة أفضل مقترح')">
+      
+      <!-- الصورة الثالثة -->
+      <img src="DSCproject.jpg" alt="TechHub Booth Project" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Project' : 'المشروع', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'TechHub Exhibition Booth Interface' : 'واجهة بوث معرض TechHub')">
+    </div>
+  </div>
+</div>
 
       <div class="timeline-item reveal">
-        <span class="timeline-node"></span>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-logo">
-              <img src="IEEElogo.jpg" alt="شعار نادي IEEE" data-w="160" data-h="160" onerror="phFallback(this,'شعار النادي','logo')">
-            </div>
-            <div class="tl-titles">
-              <h3>نادي IEEE</h3>
-              <span class="tl-role">عضوة قسم الموارد البشرية</span>
-            </div>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> أكتوبر ٢٠٢٥ – الآن</span>
-          </div>
-          <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg>المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</li>
-          </ul>
-          <div class="tl-gallery">
-            <img src="IEEEcertificate.jpg" alt="شهادة نادي IEEE" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة المشاركة في نادي IEEE')">
-          </div>
-        </div>
+  <span class="timeline-node"></span>
+  <div class="tl-card">
+    <div class="tl-head">
+      <div class="tl-logo">
+        <img src="IEEElogo.jpg" alt="IEEE Club Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Club Logo' : 'شعار النادي', 'logo')">
       </div>
+      <div class="tl-titles">
+        <h3>
+          <span class="lang-ar">نادي IEEE</span>
+          <span class="lang-en">IEEE Club</span>
+        </h3>
+        <span class="tl-role">
+          <span class="lang-ar">عضوة قسم الموارد البشرية</span>
+          <span class="lang-en">Human Resources Member</span>
+        </span>
+      </div>
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">أكتوبر ٢٠٢٥ – الآن</span>
+        <span class="lang-en">Oct 2025 – Present</span>
+      </span>
+    </div>
+    
+    <ul class="tl-list">
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</span>
+        <span class="lang-en">Contributed to managing member affairs, handling official emails, and issuing certificates.</span>
+      </li>
+    </ul>
+    
+    <div class="tl-gallery">
+      <img src="IEEEcertificate.jpg" alt="IEEE Club Certificate" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'IEEE Club Participation Certificate' : 'شهادة المشاركة في نادي IEEE')">
+    </div>
+  </div>
+</div>
 
       <div class="timeline-item reveal">
-        <span class="timeline-node"></span>
-        <div class="tl-card">
-          <div class="tl-head">
-            <div class="tl-logo">
-              <img src="Bashoshlogo.jpg" alt="شعار فريق بشوش" data-w="160" data-h="160" onerror="phFallback(this,'شعار الفريق','logo')">
-            </div>
-            <div class="tl-titles">
-              <h3>فريق بشوش التطوعي</h3>
-              <span class="tl-role">عضوة قسم الموارد البشرية</span>
-            </div>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> يناير ٢٠٢٦ – مايو ٢٠٢٦</span>
-          </div>
-          <ul class="tl-list">
-            <li><svg class="icon"><use href="#i-check"/></svg>المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</li>
-          </ul>
-          <div class="tl-gallery">
-            <img src="Bashoshcertificate.jpg" alt="شهادة فريق بشوش" data-w="300" data-h="300" onerror="phFallback(this,'الشهادة','gallery')" onclick="openLightbox(this.src,'شهادة خبرة العمل التطوعي')">
-          </div>
-        </div>
+  <span class="timeline-node"></span>
+  <div class="tl-card">
+    <div class="tl-head">
+      <div class="tl-logo">
+        <img src="Bashoshlogo.jpg" alt="Bashosh Volunteer Team Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Team Logo' : 'شعار الفريق', 'logo')">
       </div>
+      <div class="tl-titles">
+        <h3>
+          <span class="lang-ar">فريق بشوش التطوعي</span>
+          <span class="lang-en">Bashosh Volunteer Team</span>
+        </h3>
+        <span class="tl-role">
+          <span class="lang-ar">عضوة قسم الموارد البشرية</span>
+          <span class="lang-en">Human Resources Member</span>
+        </span>
+      </div>
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">يناير ٢٠٢٦ – مايو ٢٠٢٦</span>
+        <span class="lang-en">Jan 2026 – May 2026</span>
+      </span>
+    </div>
+    
+    <ul class="tl-list">
+      <li>
+        <svg class="icon"><use href="#i-check"/></svg> 
+        <span class="lang-ar">المساهمة في تنظيم شؤون الأعضاء، وإدارة الإيميلات الرسمية وإصدار الشهادات.</span>
+        <span class="lang-en">Contributed to managing member affairs, handling official emails, and issuing certificates.</span>
+      </li>
+    </ul>
+    
+    <div class="tl-gallery">
+      <!-- صورة الشهادة -->
+      <img src="Bashoshcertificate.jpg" alt="Bashosh Team Certificate" data-w="300" data-h="300" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'gallery')" 
+           onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Volunteer Work Experience Certificate' : 'شهادة خبرة العمل التطوعي')">
+    </div>
+  </div>
+</div>
+
 
     </div>
   </div>
@@ -769,84 +1060,250 @@ ul{ list-style:none; }
 <section class="section" id="competitions">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon"><use href="#i-award"/></svg> القسم الثاني</span>
-      <h2>المسابقات والهاكاثونات</h2>
-      <p>تحديات وتجارب خضتها وصقلت مهاراتي</p>
-    </div>
+  <span class="eyebrow">
+    <svg class="icon"><use href="#i-award"/></svg> 
+    <span class="lang-ar">القسم الثاني</span>
+    <span class="lang-en">Part II</span>
+  </span>
+  
+  <h2>
+    <span class="lang-ar">المسابقات والهاكاثونات</span>
+    <span class="lang-en">Competitions & Hackathons</span>
+  </h2>
+  
+  <p>
+    <span class="lang-ar">تحديات وتجارب خضتها وصقلت مهاراتي</span>
+    <span class="lang-en">Challenges and experiences I took on that refined my skills</span>
+  </p>
+</div>
 
     <div class="comp-grid">
 
-      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل هاكاثون SportTech" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
-        <div class="flip-inner">
-          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <span class="comp-badge">🥉 المركز الثالث</span>
-            <div class="tl-logo"><img src="SportTechlogo.jpg" alt="شعار هاكاثون SportTech" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
-            <h3>هاكاثون SportTech</h3>
-            <span class="proj">Saudi Heritage Step</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٢٠ نوفمبر ٢٠٢٥</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
-          </div>
-          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <h4>عن المشروع</h4>
-            <p> فريق من اربعة طالبات طورنا فكرة تدمج الرياضة بالتراث، عبر تمارين رياضية لكبار السن مستوحاة من الرقصات الشعبية السعودية، مع نموذج أولي (Prototype) بمساعدة Claude AI.</p>
-            <img src="SportTechCertificate.jpg" alt="شهادة هاكاثون SportTech" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المركز الثالث - هاكاثون SportTech')">
-          </div>
-        </div>
+      <div class="flip-card reveal" tabindex="0" role="button" 
+     aria-label="عرض تفاصيل هاكاثون SportTech / View SportTech Hackathon Details" 
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+  <div class="flip-inner">
+    
+    <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <span class="comp-badge">
+        <span class="lang-ar">🥉 المركز الثالث</span>
+        <span class="lang-en">🥉 3rd Place</span>
+      </span>
+      
+      <div class="tl-logo">
+        <img src="SportTechlogo.jpg" alt="SportTech Hackathon Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Competition Logo' : 'شعار المسابقة', 'logo')">
       </div>
+      
+      <h3>
+        <span class="lang-ar">هاكاثون SportTech</span>
+        <span class="lang-en">SportTech Hackathon</span>
+      </h3>
+      
+      <span class="proj">Saudi Heritage Step</span>
+      
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">٢٠ نوفمبر ٢٠٢٥</span>
+        <span class="lang-en">Nov 20, 2025</span>
+      </span>
+      
+      <div class="flip-hint">
+        <svg class="icon"><use href="#i-rotate"/></svg> 
+        <span class="lang-ar">اضغط لعرض التفاصيل</span>
+        <span class="lang-en">Click to view details</span>
+      </div>
+    </div>
+    
+    <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <h4>
+        <span class="lang-ar">عن المشروع</span>
+        <span class="lang-en">About the Project</span>
+      </h4>
+      
+      <p>
+        <span class="lang-ar">فريق من اربعة طالبات طورنا فكرة تدمج الرياضة بالتراث، عبر تمارين رياضية لكبار السن مستوحاة من الرقصات الشعبية السعودية، مع نموذج أولي (Prototype) بمساعدة Claude AI.</span>
+        <span class="lang-en">A team of four female students, we developed a concept merging sports with heritage through physical exercises for the elderly inspired by Saudi folk dances, along with a prototype created with the help of Claude AI.</span>
+      </p>
+      
+      <img src="SportTechCertificate.jpg" alt="SportTech Hackathon Certificate" data-w="480" data-h="270" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'cert')" 
+           onclick="event.stopPropagation(); openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? '3rd Place Certificate - SportTech Hackathon' : 'شهادة المركز الثالث - هاكاثون SportTech')">
+    </div>
+    
+  </div>
+</div>
 
-      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل تحدي Build the Vibe" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
-        <div class="flip-inner">
-          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <span class="comp-badge">🥉 المركز الثالث</span>
-            <div class="tl-logo"><img src="BuildTheVibelogo.jpg" alt="شعار تحدي Build the Vibe" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
-            <h3>تحدي Build the Vibe</h3>
-            <span class="proj">موقع Jeddah Art Gallery</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ١١ - ١٢ مايو ٢٠٢٦ </span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
-          </div>
-          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <h4>عن المشروع</h4>
-            <p>فريق من طالبتين قمنا بتطوير واجهات تفاعلية وفق سيناريو محدد، باستخدام أسلوب Vibe Coding بمساعدة Gemini، ومزامنة بيئة العمل عبر GitHub Codespaces، ونشر الموقع على Vercel.</p>
-            <img src="BuildTheVibeCertificate.jpg" alt="شهادة تحدي Build the Vibe" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المركز الثالث - Build the Vibe')">
-          </div>
-        </div>
+      <div class="flip-card reveal" tabindex="0" role="button" 
+     aria-label="عرض تفاصيل تحدي Build the Vibe / View Build the Vibe Challenge Details" 
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+  <div class="flip-inner">
+    
+    <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <span class="comp-badge">
+        <span class="lang-ar">🥉 المركز الثالث</span>
+        <span class="lang-en">🥉 3rd Place</span>
+      </span>
+      
+      <div class="tl-logo">
+        <img src="BuildTheVibelogo.jpg" alt="Build the Vibe Challenge Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Competition Logo' : 'شعار المسابقة', 'logo')">
       </div>
+      
+      <h3>
+        <span class="lang-ar">تحدي Build the Vibe</span>
+        <span class="lang-en">Build the Vibe Challenge</span>
+      </h3>
+      
+      <span class="proj">
+        <span class="lang-ar">موقع Jeddah Art Gallery</span>
+        <span class="lang-en">Jeddah Art Gallery Website</span>
+      </span>
+      
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">١١ - ١٢ مايو ٢٠٢٦</span>
+        <span class="lang-en">May 11 – 12, 2026</span>
+      </span>
+      
+      <div class="flip-hint">
+        <svg class="icon"><use href="#i-rotate"/></svg> 
+        <span class="lang-ar">اضغط لعرض التفاصيل</span>
+        <span class="lang-en">Click to view details</span>
+      </div>
+    </div>
+    
+    <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <h4>
+        <span class="lang-ar">عن المشروع</span>
+        <span class="lang-en">About the Project</span>
+      </h4>
+      
+      <p>
+        <span class="lang-ar">فريق من طالبتين قمنا بتطوير واجهات تفاعلية وفق سيناريو محدد، باستخدام أسلوب Vibe Coding بمساعدة Gemini، ومزامنة بيئة العمل عبر GitHub Codespaces، ونشر الموقع على Vercel.</span>
+        <span class="lang-en">A team of two female students, we developed interactive interfaces according to a specific scenario, utilizing the Vibe Coding approach with the help of Gemini, synchronizing the workspace via GitHub Codespaces, and deploying the website on Vercel.</span>
+      </p>
+      
+      <img src="BuildTheVibeCertificate.jpg" alt="Build the Vibe Challenge Certificate" data-w="480" data-h="270" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'cert')" 
+           onclick="event.stopPropagation(); openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? '3rd Place Certificate - Build the Vibe' : 'شهادة المركز الثالث - Build the Vibe')">
+    </div>
+    
+  </div>
+</div>
 
-      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل تحدي Dev Summit Challenge" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
-        <div class="flip-inner">
-          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <span class="comp-badge">مشاركة</span>
-            <div class="tl-logo"><img src="DevSummitChallengelogo.jpg" alt="شعار تحدي Dev Summit Challenge" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
-            <h3>تحدي Dev Summit Challenge</h3>
-            <span class="proj">تحديات برمجية بلغة Java</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٢٦ ابريل ٢٠٢٦</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
-          </div>
-          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <h4>عن المشروع</h4>
-            <p>فريق من ثلاث طالبات قمنا بحل مجموعة من المشكلات البرمجية بلغة Java، ورفع الحلول والأكواد عبر منصتي Vjudge وCodeforces.</p>
-            <img src="DevSummitChallengeCertificate.jpg" alt="شهادة تحدي Dev Summit Challenge" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المشاركة - Dev Summit Challenge')">
-          </div>
-        </div>
+      <div class="flip-card reveal" tabindex="0" role="button" 
+     aria-label="عرض تفاصيل تحدي Dev Summit Challenge / View Dev Summit Challenge Details" 
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+  <div class="flip-inner">
+    
+    <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <span class="comp-badge">
+        <span class="lang-ar">مشاركة</span>
+        <span class="lang-en">Participant</span>
+      </span>
+      
+      <div class="tl-logo">
+        <img src="DevSummitChallengelogo.jpg" alt="Dev Summit Challenge Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Competition Logo' : 'شعار المسابقة', 'logo')">
       </div>
+      
+      <h3>
+        <span class="lang-ar">تحدي Dev Summit Challenge</span>
+        <span class="lang-en">Dev Summit Challenge</span>
+      </h3>
+      
+      <span class="proj">
+        <span class="lang-ar">تحديات برمجية بلغة Java</span>
+        <span class="lang-en">Java Programming Challenges</span>
+      </span>
+      
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">٢٦ أبريل ٢٠٢٦</span>
+        <span class="lang-en">Apr 26, 2026</span>
+      </span>
+      
+      <div class="flip-hint">
+        <svg class="icon"><use href="#i-rotate"/></svg> 
+        <span class="lang-ar">اضغط لعرض التفاصيل</span>
+        <span class="lang-en">Click to view details</span>
+      </div>
+    </div>
+    
+    <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <h4>
+        <span class="lang-ar">عن المشروع</span>
+        <span class="lang-en">About the Project</span>
+      </h4>
+      
+      <p>
+        <span class="lang-ar">فريق من ثلاث طالبات قمنا بحل مجموعة من المشكلات البرمجية بلغة Java، ورفع الحلول والأكواد عبر منصتي Vjudge وCodeforces.</span>
+        <span class="lang-en">A team of three female students, we solved a set of programming problems using Java, and submitted the solutions and code via Vjudge and Codeforces platforms.</span>
+      </p>
+      
+      <img src="DevSummitChallengeCertificate.jpg" alt="Dev Summit Challenge Certificate" data-w="480" data-h="270" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'cert')" 
+           onclick="event.stopPropagation(); openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Participation Certificate - Dev Summit Challenge' : 'شهادة المشاركة - Dev Summit Challenge')">
+    </div>
+    
+  </div>
+</div>
 
-      <div class="flip-card reveal" tabindex="0" role="button" aria-label="عرض تفاصيل هاكاثون Spacethon" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
-        <div class="flip-inner">
-          <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <span class="comp-badge">مشاركة</span>
-            <div class="tl-logo"><img src="Spacethonlogo.jpg" alt="شعار هاكاثون Spacethon" data-w="160" data-h="160" onerror="phFallback(this,'شعار المسابقة','logo')"></div>
-            <h3>هاكاثون Spacethon</h3>
-            <span class="proj">Inspiring Saudi Space Journey</span>
-            <span class="tl-date"><svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> ٦ - ٧ اكتوبر ٢٠٢٥</span>
-            <div class="flip-hint"><svg class="icon"><use href="#i-rotate"/></svg> اضغط لعرض التفاصيل</div>
-          </div>
-          <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
-            <h4>عن المشروع</h4>
-            <p>فريق من أربعة أعضاء شاركنا بفكرة لتعليم الأطفال علوم الفضاء بأسلوب تفاعلي يمزج بين المانجا والواقع المعزز، عبر نموذج أولي بمساعدة Claude AI.</p>
-            <img src="SpacethonCertificate.jpg" alt="شهادة هاكاثون Spacethon" data-w="480" data-h="270" onerror="phFallback(this,'الشهادة','cert')" onclick="event.stopPropagation(); openLightbox(this.src,'شهادة المشاركة - هاكاثون Spacethon')">
-          </div>
-        </div>
+      <div class="flip-card reveal" tabindex="0" role="button" 
+     aria-label="عرض تفاصيل هاكاثون Spacethon / View Spacethon Hackathon Details" 
+     onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('flipped');}">
+  <div class="flip-inner">
+    
+    <div class="flip-face flip-front" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <span class="comp-badge">
+        <span class="lang-ar">مشاركة</span>
+        <span class="lang-en">Participant</span>
+      </span>
+      
+      <div class="tl-logo">
+        <img src="Spacethonlogo.jpg" alt="Spacethon Hackathon Logo" data-w="160" data-h="160" 
+             onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Competition Logo' : 'شعار المسابقة', 'logo')">
       </div>
+      
+      <h3>
+        <span class="lang-ar">هاكاثون Spacethon</span>
+        <span class="lang-en">Spacethon Hackathon</span>
+      </h3>
+      
+      <span class="proj">Inspiring Saudi Space Journey</span>
+      
+      <span class="tl-date">
+        <svg class="icon" style="width:.9em;height:.9em"><use href="#i-calendar"/></svg> 
+        <span class="lang-ar">٦ - ٧ أكتوبر ٢٠٢٥</span>
+        <span class="lang-en">Oct 6 – 7, 2025</span>
+      </span>
+      
+      <div class="flip-hint">
+        <svg class="icon"><use href="#i-rotate"/></svg> 
+        <span class="lang-ar">اضغط لعرض التفاصيل</span>
+        <span class="lang-en">Click to view details</span>
+      </div>
+    </div>
+    
+    <div class="flip-face flip-back" onclick="this.closest('.flip-card').classList.toggle('flipped')">
+      <h4>
+        <span class="lang-ar">عن المشروع</span>
+        <span class="lang-en">About the Project</span>
+      </h4>
+      
+      <p>
+        <span class="lang-ar">فريق من أربعة أعضاء شاركنا بفكرة لتعليم الأطفال علوم الفضاء بأسلوب تفاعلي يمزج بين المانجا والواقع المعزز، عبر نموذج أولي بمساعدة Claude AI.</span>
+        <span class="lang-en">A team of four members, we participated with a concept to teach children space sciences through an interactive approach combining Manga and Augmented Reality (AR), alongside a prototype created with the help of Claude AI.</span>
+      </p>
+      
+      <img src="SpacethonCertificate.jpg" alt="Spacethon Hackathon Certificate" data-w="480" data-h="270" 
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'cert')" 
+           onclick="event.stopPropagation(); openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Participation Certificate - Spacethon Hackathon' : 'شهادة المشاركة - هاكاثون Spacethon')">
+    </div>
+    
+  </div>
+</div>
 
     </div>
   </div>
@@ -856,40 +1313,104 @@ ul{ list-style:none; }
 <section class="section section--tint" id="VariousEvents">
   <div class="container">
     <div class="section-head reveal">
-      <span class="eyebrow"><svg class="icon"><use href="#i-calendar"/></svg> القسم الثالث</span>
-      <h2>احداث متنوعة</h2>
-      <p>فعاليات حضرتها واضافت لي الكثير</p>
-    </div>
+  <span class="eyebrow">
+    <svg class="icon"><use href="#i-calendar"/></svg> 
+    <span class="lang-ar">القسم الثالث</span>
+    <span class="lang-en">Part III</span>
+  </span>
+  
+  <h2>
+    <span class="lang-ar">أحداث متنوعة</span>
+    <span class="lang-en">Various Events</span>
+  </h2>
+  
+  <p>
+    <span class="lang-ar">فعاليات حضرتها وأضافت لي الكثير</span>
+    <span class="lang-en">Events I attended that contributed greatly to my growth</span>
+  </p>
+</div>
 
     <div class="gallery">
-      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'المؤتمر الأول لريادة الأعمال')">
-        <img src="Innovation.jpg" alt="المؤتمر الأول لريادة الأعمال" data-w="480" data-h="420" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <div class="gallery-caption">
-          <div>المؤتمر الأول لريادة الأعمال</div>
-          <div class="d">مركز الملك فيصل للمؤتمرات • ٢٢ أكتوبر ٢٠٢٥</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'فعاليات معرض تيك هب')">
-        <img src="TechHub.jpg" alt="فعاليات معرض تيك هب" data-w="480" data-h="560" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <div class="gallery-caption">
-          <div>فعاليات معرض تيك هب</div>
-          <div class="d">كلية الحاسبات وتقنية المعلومات • ٢٦ أبريل ٢٠٢٦</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'هاكاثون نهج للتعلم الذكي')">
-        <img src="HackathonNohj.jpg" alt="هاكاثون نهج للتعلم الذكي" data-w="480" data-h="360" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <div class="gallery-caption">
-          <div>هاكاثون نهج للتعلم الذكي</div>
-          <div class="d">كلية الحاسبات وتقنية المعلومات • ١٨ نوفمبر ٢٠٢٥</div>
-        </div>
-      </div>
-      <div class="gallery-item reveal" onclick="openLightbox(this.querySelector('img').src,'جلسة ريادة الأعمال كمسار وظيفي')">
-        <img src="Business.jpg" alt="جلسة ريادة الأعمال كمسار وظيفي" data-w="480" data-h="480" onerror="phFallback(this,'صورة الفعالية','gallery')">
-        <div class="gallery-caption">
-          <div>ريادة الأعمال كمسار وظيفي</div>
-          <div class="d">كلية الاقتصاد والإدارة • ٦ مايو ٢٠٢٦</div>
-        </div>
-      </div>
+      
+      <div class="gallery-item reveal" 
+     onclick="openLightbox(this.querySelector('img').src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'The 1st Entrepreneurship Conference' : 'المؤتمر الأول لريادة الأعمال')">
+  
+  <img src="Innovation.jpg" alt="The 1st Entrepreneurship Conference" data-w="480" data-h="420" 
+       onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Event Image' : 'صورة الفعالية', 'gallery')">
+  
+  <div class="gallery-caption">
+    <div>
+      <span class="lang-ar">المؤتمر الأول لريادة الأعمال</span>
+      <span class="lang-en">The 1st Entrepreneurship Conference</span>
+    </div>
+    
+    <div class="d">
+      <span class="lang-ar">مركز الملك فيصل للمؤتمرات • ٢٢ أكتوبر ٢٠٢٥</span>
+      <span class="lang-en">King Faisal Convention Center • Oct 22, 2025</span>
+    </div>
+  </div>
+</div>
+
+      <div class="gallery-item reveal" 
+     onclick="openLightbox(this.querySelector('img').src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'TechHub Exhibition Events' : 'فعاليات معرض تيك هب')">
+  
+  <img src="TechHub.jpg" alt="TechHub Exhibition Events" data-w="480" data-h="560" 
+       onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Event Image' : 'صورة الفعالية', 'gallery')">
+  
+  <div class="gallery-caption">
+    <div>
+      <span class="lang-ar">فعاليات معرض تيك هب</span>
+      <span class="lang-en">TechHub Exhibition Events</span>
+    </div>
+    
+    <div class="d">
+      <span class="lang-ar">كلية الحاسبات وتقنية المعلومات • ٢٦ أبريل ٢٠٢٦</span>
+      <span class="lang-en">Faculty of Computing and Information Technology • Apr 26, 2026</span>
+    </div>
+  </div>
+</div>
+
+
+    <div class="gallery-item reveal" 
+     onclick="openLightbox(this.querySelector('img').src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Nohj Hackathon for Smart Learning' : 'هاكاثون نهج للتعلم الذكي')">
+  
+  <img src="HackathonNohj.jpg" alt="Nohj Hackathon for Smart Learning" data-w="480" data-h="360" 
+       onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Event Image' : 'صورة الفعالية', 'gallery')">
+  
+  <div class="gallery-caption">
+    <div>
+      <span class="lang-ar">هاكاثون نهج للتعلم الذكي</span>
+      <span class="lang-en">Nohj Hackathon for Smart Learning</span>
+    </div>
+    
+    <div class="d">
+      <span class="lang-ar">كلية الحاسبات وتقنية المعلومات • ١٨ نوفمبر ٢٠٢٥</span>
+      <span class="lang-en">Faculty of Computing and Information Technology • Nov 18, 2025</span>
+    </div>
+  </div>
+</div>
+
+    
+    <div class="gallery-item reveal" 
+     onclick="openLightbox(this.querySelector('img').src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Entrepreneurship as a Career Path Session' : 'جلسة ريادة الأعمال كمسار وظيفي')">
+  
+  <img src="Business.jpg" alt="Entrepreneurship as a Career Path Session" data-w="480" data-h="480" 
+       onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Event Image' : 'صورة الفعالية', 'gallery')">
+  
+  <div class="gallery-caption">
+    <div>
+      <span class="lang-ar">ريادة الأعمال كمسار وظيفي</span>
+      <span class="lang-en">Entrepreneurship as a Career Path</span>
+    </div>
+    
+    <div class="d">
+      <span class="lang-ar">كلية الاقتصاد والإدارة • ٦ مايو ٢٠٢٦</span>
+      <span class="lang-en">Faculty of Economics and Administration • May 6, 2026</span>
+    </div>
+  </div>
+</div>
+      
+
     </div>
   </div>
 </section>
@@ -899,15 +1420,43 @@ ul{ list-style:none; }
 <!-- ============ Footer ============ -->
 <footer class="footer" id="contact">
   <div class="container">
- <span class="brand-mark">
-        <img src="logo.png" alt="شعار رهام الزهراني" class="brand-logo-img">
-      </span>
-      <div class="footer-links">
-      <a href="https://x.com/requ_2030?s=11" target="_blank"><svg class="icon"><use href="#i-link"/></svg>X</a>
-      <a href="https://www.linkedin.com/in/reham-alzahrani-495327234?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank"><svg class="icon"><use href="#i-link"/></svg>LinkedIn</a>
-      <a href="mailto:alzahrani.500000@gmail.com" target="_blank"><svg class="icon"><use href="#i-mail"/></svg> البريد الإلكتروني</a>
-    </div>
-    <small>© ٢٠٢٦ رهام الزهراني. جميع الحقوق محفوظة — السنة الأولى في كلية الحاسبات · Portfolio</small>
+    <span class="brand-mark">
+      <img src="logo.png" 
+           alt="Reham Al-Zahrani Logo" 
+           class="brand-logo-img"
+           onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Logo' : 'شعار رهام الزهراني', 'logo')">
+    </span>
+    
+    <div class="footer-links">
+  <a href="https://x.com/requ_2030?s=11" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" style="width: 1em; height: 1em;">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+    </svg>
+  </a>
+  
+  <a href="https://www.tiktok.com/@re..2030?_r=1&_t=ZS-97M8wZk84kK" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" style="width: 1em; height: 1em;">
+      <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.62 4.2 1.22 1.4 3 2.18 4.85 2.37v3.89c-1.81-.01-3.61-.48-5.18-1.42-.4-.24-.78-.53-1.14-.84a8.13 8.13 0 0 1-.52-.49v6.62c.03 2.53-1.1 5.01-3.08 6.57-2.07 1.69-4.96 2.21-7.49 1.34-2.73-.87-4.91-3.21-5.38-6.02-.63-3.41 1.21-6.89 4.37-8.15 1.41-.58 2.97-.73 4.47-.43v3.9c-1.12-.35-2.35-.11-3.26.62-.97.74-1.42 1.99-1.14 3.19.26 1.15 1.25 2.05 2.42 2.19 1.34.21 2.76-.51 3.25-1.78.18-.45.24-.94.24-1.42V0h.01z"/>
+    </svg>
+  </a>
+  
+  <a href="https://www.linkedin.com/in/reham-alzahrani-495327234?utm_source=share_via&utm_content=profile&utm_medium=member_ios" target="_blank">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" style="width: 1em; height: 1em;">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
+  
+  <a href="mailto:alzahrani.500000@gmail.com" target="_blank" aria-label="Email">
+    <svg class="icon" viewBox="0 0 24 24" fill="currentColor" style="width: 1.4em; height: 1.4em;">
+      <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+    </svg>
+  </a>
+</div>
+    
+    <small>
+      <span class="lang-ar">© ٢٠٢٦ رهام الزهراني. جميع الحقوق محفوظة — السنة الأولى في كلية الحاسبات · Portfolio</span>
+      <span class="lang-en">© 2026 Reham Al-Zahrani. All rights reserved — First Year at FCIT · Portfolio</span>
+    </small>
   </div>
 </footer>
 
@@ -1025,32 +1574,74 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* ---------- Hero typewriter ---------- */
-  var roles = [
-    'طالبة نظم معلومات حاسوبية',
-    'متطوعة بشغف وحب للأثر الإيجابي'
-  ];
-  
-  var typeEl = document.getElementById('typeTarget');
-  if (reduceMotion){
-    typeEl.textContent = roles[0];
+  /* ---------- Hero typewriter (نظام النسختين المنفصلتين المطور) ---------- */
+
+// مصفوفة الكلمات العربية
+var rolesAr = [
+  'طالبة نظم معلومات حاسوبية',
+  'متطوعة بشغف وحب للأثر الإيجابي'
+];
+
+// مصفوفة الكلمات الإنجليزية
+var rolesEn = [
+  'Computer Information Systems Student',
+  'Passionate Volunteer for Positive Impact'
+];
+
+// فحص خيار تقليل الحركة (إذا كان غير معرف نعتبره false)
+var isReduceMotion = (typeof reduceMotion !== 'undefined') ? reduceMotion : false;
+
+// 1. تشغيل التايب رايتر للنسخة العربية
+var typeElAr = document.getElementById('typeTargetAr');
+if (typeElAr) {
+  if (isReduceMotion) {
+    typeElAr.textContent = rolesAr[0];
   } else {
-    var rIndex = 0, charIndex = 0, deleting = false;
-    function tick(){
-      var word = roles[rIndex];
-      if (!deleting){
-        charIndex++;
-        typeEl.textContent = word.slice(0, charIndex);
-        if (charIndex === word.length){ deleting = true; setTimeout(tick, 1900); return; }
+    var rIndexAr = 0, charIndexAr = 0, deletingAr = false;
+    function tickAr() {
+      var word = rolesAr[rIndexAr];
+      if (!word) return; // حماية إضافية
+      
+      if (!deletingAr) {
+        charIndexAr++;
+        typeElAr.textContent = word.slice(0, charIndexAr);
+        if (charIndexAr === word.length) { deletingAr = true; setTimeout(tickAr, 1900); return; }
       } else {
-        charIndex--;
-        typeEl.textContent = word.slice(0, charIndex);
-        if (charIndex === 0){ deleting = false; rIndex = (rIndex + 1) % roles.length; }
+        charIndexAr--;
+        typeElAr.textContent = word.slice(0, charIndexAr);
+        if (charIndexAr === 0) { deletingAr = false; rIndexAr = (rIndexAr + 1) % rolesAr.length; }
       }
-      setTimeout(tick, deleting ? 30 : 55);
+      setTimeout(tickAr, deletingAr ? 30 : 55);
     }
-    tick();
+    tickAr();
   }
+}
+
+// 2. تشغيل التايب رايتر للنسخة الإنجليزية
+var typeElEn = document.getElementById('typeTargetEn');
+if (typeElEn) {
+  if (isReduceMotion) {
+    typeElEn.textContent = rolesEn[0];
+  } else {
+    var rIndexEn = 0, charIndexEn = 0, deletingEn = false;
+    function tickEn() {
+      var word = rolesEn[rIndexEn];
+      if (!word) return; // حماية إضافية
+      
+      if (!deletingEn) {
+        charIndexEn++;
+        typeElEn.textContent = word.slice(0, charIndexEn);
+        if (charIndexEn === word.length) { deletingEn = true; setTimeout(tickEn, 1900); return; }
+      } else {
+        charIndexEn--;
+        typeElEn.textContent = word.slice(0, charIndexEn);
+        if (charIndexEn === 0) { deletingEn = false; rIndexEn = (rIndexEn + 1) % rolesEn.length; }
+      }
+      setTimeout(tickEn, deletingEn ? 30 : 55);
+    }
+    tickEn();
+  }
+}
 
   /* ---------- GPA ring count-up ---------- */
   var gpaRing = document.getElementById('gpaRing');
@@ -1084,12 +1675,12 @@ document.addEventListener('DOMContentLoaded', function(){
       entries.forEach(function(entry){ 
         if (entry.isIntersecting) {
           // أضفنا تأخير بسيط هنا لتلاحظي الحركة بعينكِ عند فتح الصفحة
-          setTimeout(animateGpa, 1000); 
+          setTimeout(animateGpa, 800); 
         } 
       });
     }, { threshold:.4 }).observe(gpaRing);
   } else { 
-    setTimeout(animateGpa, 1000); 
+    setTimeout(animateGpa, 800); 
   }
 
 
@@ -1137,6 +1728,55 @@ document.addEventListener('DOMContentLoaded', function(){
     }, { passive:true });
   }
 });
+
+
+// 1. الدالة الرئيسية التي يتم استدعاؤها عند الضغط على الزر (تحدد اللغة القادمة)
+function switchSiteLanguage() {
+    // جلب اللغة الحالية المفعّلة في المتصفح (إذا لم تكن موجودة يفترض أنها عربي 'ar')
+    const currentLang = document.documentElement.lang || 'ar';
+    
+    // عملية التبديل: إذا كانت عربي حولها لإنجليزي، والعكس صحيح
+    const newLang = (currentLang === 'ar') ? 'en' : 'ar';
+    
+    // استدعاء دالة تطبيق التغييرات
+    applyLanguageSetting(newLang);
+}
+
+// 2. الدالة المسؤولة عن تطبيق الاتجاهات، النصوص، وحفظ الخيارات
+function applyLanguageSetting(lang) {
+    // جلب عنصر النص الموجود داخل زر تبديل اللغة الخاص بكِ
+    const langBtnText = document.querySelector('.lang-toggle-btn .lang-text');
+    
+    if (lang === 'en') {
+        // تحويل خصائص الصفحة للغة الإنجليزية
+        document.documentElement.lang = 'en';
+        document.documentElement.dir = 'ltr';
+        
+        // تغيير الكلمة داخل الزر لتصبح (AR) للإشارة إلى أن الضغطة القادمة تعيد للعربي
+        if (langBtnText) langBtnText.textContent = 'AR';
+        
+    } else {
+        // تحويل خصائص الصفحة للغة العربية
+        document.documentElement.lang = 'ar';
+        document.documentElement.dir = 'rtl';
+        
+        // تغيير الكلمة داخل الزر لتصبح (EN) للإشارة إلى أن الضغطة القادمة تحول للإنجليزي
+        if (langBtnText) langBtnText.textContent = 'EN';
+    }
+    
+    // حفظ اللغة المفعّلة حالياً في ذاكرة المتصفح المحلية (LocalStorage)
+    localStorage.setItem("siteLanguage", lang);
+}
+
+// 3. الفحص التلقائي فور تحميل الصفحة في المتصفح
+document.addEventListener("DOMContentLoaded", () => {
+    // قراءة اللغة المحفوظة سابقاً، وإذا كان المستخدم يدخل لأول مرة يتم اعتماد العربي 'ar' كإفتراضي
+    const savedLang = localStorage.getItem("siteLanguage") || "ar";
+    
+    // تطبيق اللغة المسترجعة فوراً عند فتح الموقع
+    applyLanguageSetting(savedLang);
+});
+
 </script>
 
 </body>
