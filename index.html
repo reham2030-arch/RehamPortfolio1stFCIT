@@ -118,10 +118,10 @@ ul{ list-style:none; }
   box-shadow:var(--shadow);
 }
 .brand-logo-img {
-  height: 60px; /* يمكنك تكبير أو تصغير الرقم حسب رغبتك */
-  width: auto;  /* ليحافظ على أبعاد الصورة الأصلية */
-  display: block; /* ليظهر بشكل مرتب */
-  object-fit: contain; /* لضمان عدم تمدد الصورة بشكل سيء */
+  height: 60px; 
+  width: auto;  
+  display: block; 
+  object-fit: contain; 
 }
 .brand-name{ font-family:var(--font-display); font-weight:700; font-size:1.05rem; }
 .nav-links{ display:none; align-items:center; gap:1.9rem; }
@@ -146,7 +146,7 @@ ul{ list-style:none; }
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: bold;
-  font-family: sans-serif; /* لضمان ثبات شكل الحروف */
+  font-family: sans-serif; 
 }
 .theme-toggle:hover, .nav-burger:hover, .lang-toggle-btn:hover { background:var(--grad-soft); transform:translateY(-2px); }
 .theme-toggle .icon-moon, .theme-toggle .icon-sun, .lang-toggle-btn .lang-text { color:var(--rose); }
@@ -317,18 +317,17 @@ ul{ list-style:none; }
 .tl-gallery img:hover{ transform:scale(1.05); }
 .tl-gallery:has(img:only-child) {
   display: flex !important;
-  justify-content: center; /* توسيط الشهادة الحالية داخل الكارد */
+  justify-content: center; 
   margin-top: 1.1rem;}
 .tl-gallery img:only-child {
   width: 100% !important;
-  max-width: 300px !important; /* الحجم المثالي للشهادة في اللاب توب */
-  height: auto !important;     /* إلغاء الـ aspect-ratio: 1 لكي تظهر كاملة مستطيلة */
+  max-width: 300px !important; 
+  height: auto !important; 
   aspect-ratio: auto !important; 
   object-fit: contain !important;}
 
 @media (min-width: 1020px) {
   .tl-gallery img:only-child {
-    /* تكبير الشهادة فقط في الشاشة الكاملة لتجاري حجم كروت النوادي الكبيرة */
     max-width: 480px !important; 
     height: 340px !important; 
   }
@@ -434,40 +433,37 @@ ul{ list-style:none; }
 
 /* ============ Responsive tweaks ============ */
 @media (max-width: 540px) {
-  /* 1. جعل الحاضن لوحة رسم مرنة وموسطة في الجوال */
+
   .hero-visual {
     position: relative;
     display: block;
     width: 100%;
-    max-width: 310px; /* حجم مدروس لعرض الصورة ليمنع خروج الأزرار خارج شاشة الجوال */
+    max-width: 310px; 
     margin: 0 auto;
   }
 
-  /* 2. بطاقة الجامعة (أعلى اليمين) */
   .badge-chip.uni {
     position: absolute !important;
     top: 8% !important;
-    inset-inline-start: -8% !important; /* تقليل الخروج لليمين ليناسب الشاشة الضيقة */
-    font-size: 0.72rem; /* تصغير الخط قليلاً */
+    inset-inline-start: -8% !important; 
+    font-size: 0.72rem; 
     padding: 0.45rem 0.75rem;
   }
 
-  /* 3. بطاقة التخصص (منتصف اليسار) */
   .badge-chip.major {
     position: absolute !important;
     top: 58% !important; 
-    inset-inline-end: -10% !important; /* تقليل الخروج لليسار ليناسب الشاشة الضيقة */
+    inset-inline-end: -10% !important; 
     font-size: 0.72rem;
     padding: 0.45rem 0.75rem;
   }
 
-  /* 4. دائرة المعدل (أسفل اليمين) */
   .gpa-ring {
     position: absolute !important;
     bottom: -10px !important;
-    inset-inline-start: -5px !important; /* تثبيتها في الزاوية السفلية */
+    inset-inline-start: -5px !important; 
     margin: 0;
-    transform: scale(0.98); /* تصغير حجم الدائرة لتتناسب مع أبعاد الجوال */
+    transform: scale(0.98); 
     transform-origin: bottom inset-inline-start;
     display: flex;
     align-items: center;
@@ -476,35 +472,32 @@ ul{ list-style:none; }
 }
 
 @media (max-width: 540px) {
-  /* --- كود تمديد الكاردات في الجوال فقط --- */
   
   .timeline {
-    padding-inline-end: 0.5rem !important; /* تقليل الهامش الجانبي لتعطي الكارد مساحة أكبر */
+    padding-inline-end: 0.5rem !important; 
     width: 100% !important;
   }
 
   .timeline-item {
-    padding-inline-start: 1.8rem !important; /* تقريب الخط الزمني قليلاً لكسب مساحة إضافية للنص */
+    padding-inline-start: 1.8rem !important; 
     width: 100% !important;
   }
 
   .tl-card {
     width: 100% !important;
-    padding: 1.2rem !important; /* تقليل الحشو الداخلي للكارد ليصبح النص ممتداً ومريحاً في الشاشات الضيقة */
+    padding: 1.2rem !important; 
   }
 }
 
-/* ١. إخفاء النسخة الإنجليزية بشكل افتراضي عند بداية تحميل الموقع */
 .lang-en {
     display: none !important;
 }
 
-/* ٢. عندما يضغط المستخدم على الزر وتتحول لغة الصفحة إلى إنجليزية (إخفاء العربي وإظهار الإنجليزي) */
 html[lang="en"] .lang-ar { 
     display: none !important; 
 }
 html[lang="en"] .lang-en { 
-    display: inline-block !important; /* استخدمنا inline-block لأن العنصر span */
+    display: inline-block !important; 
 }
 
 
@@ -635,7 +628,6 @@ html[lang="en"] .lang-en {
   <span class="eyebrow"><svg class="icon"><use href="#i-cap"/></svg> Achievement Portfolio · First Year in FCIT</span>
   <h1>Reham Al-Zahrani</h1>
 
-  <!-- الـ Typewriter الخاص بالإنجليزية إذا كنتِ تستخدمين سكريبت له -->
   <p class="hero-role lang-en">
     <span id="typeTargetEn"></span><span class="cursor" aria-hidden="true"></span>
   </p>
@@ -686,13 +678,13 @@ html[lang="en"] .lang-en {
   </div>
   
   <div class="container">
-  <!-- النسخة العربية -->
+
   <div class="scroll-cue reveal lang-ar">
     <span>انزل للأسفل</span>
     <svg class="icon"><use href="#i-chevron-down"/></svg>
   </div>
 
-  <!-- النسخة الإنجليزية مع إضافة التوسط المباشر -->
+
   <div class="scroll-cue reveal lang-en" style="text-align: center; display: flex; justify-content: center; align-items: center; gap: 6px; width: 100%;">
     <span>Scroll Down</span>
     <svg class="icon"><use href="#i-chevron-down"/></svg>
@@ -1043,7 +1035,7 @@ html[lang="en"] .lang-en {
     </ul>
     
     <div class="tl-gallery">
-      <!-- صورة الشهادة -->
+
       <img src="Bashoshcertificate.jpg" alt="Bashosh Team Certificate" data-w="300" data-h="300" 
            onerror="phFallback(this, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Certificate' : 'الشهادة', 'gallery')" 
            onclick="openLightbox(this.src, document.documentElement.lang === 'en' || document.body.classList.contains('en') ? 'Volunteer Work Experience Certificate' : 'شهادة خبرة العمل التطوعي')">
@@ -1574,24 +1566,21 @@ document.addEventListener('DOMContentLoaded', function(){
     document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
   }
 
-  /* ---------- Hero typewriter (نظام النسختين المنفصلتين المطور) ---------- */
 
-// مصفوفة الكلمات العربية
 var rolesAr = [
   'طالبة نظم معلومات حاسوبية',
   'متطوعة بشغف وحب للأثر الإيجابي'
 ];
 
-// مصفوفة الكلمات الإنجليزية
 var rolesEn = [
   'Computer Information Systems Student',
   'Passionate Volunteer for Positive Impact'
 ];
 
-// فحص خيار تقليل الحركة (إذا كان غير معرف نعتبره false)
+
 var isReduceMotion = (typeof reduceMotion !== 'undefined') ? reduceMotion : false;
 
-// 1. تشغيل التايب رايتر للنسخة العربية
+
 var typeElAr = document.getElementById('typeTargetAr');
 if (typeElAr) {
   if (isReduceMotion) {
@@ -1600,7 +1589,7 @@ if (typeElAr) {
     var rIndexAr = 0, charIndexAr = 0, deletingAr = false;
     function tickAr() {
       var word = rolesAr[rIndexAr];
-      if (!word) return; // حماية إضافية
+      if (!word) return; 
       
       if (!deletingAr) {
         charIndexAr++;
@@ -1617,7 +1606,7 @@ if (typeElAr) {
   }
 }
 
-// 2. تشغيل التايب رايتر للنسخة الإنجليزية
+
 var typeElEn = document.getElementById('typeTargetEn');
 if (typeElEn) {
   if (isReduceMotion) {
@@ -1626,7 +1615,7 @@ if (typeElEn) {
     var rIndexEn = 0, charIndexEn = 0, deletingEn = false;
     function tickEn() {
       var word = rolesEn[rIndexEn];
-      if (!word) return; // حماية إضافية
+      if (!word) return; 
       
       if (!deletingEn) {
         charIndexEn++;
@@ -1674,7 +1663,7 @@ if (typeElEn) {
     new IntersectionObserver(function(entries){
       entries.forEach(function(entry){ 
         if (entry.isIntersecting) {
-          // أضفنا تأخير بسيط هنا لتلاحظي الحركة بعينكِ عند فتح الصفحة
+
           setTimeout(animateGpa, 800); 
         } 
       });
@@ -1684,7 +1673,7 @@ if (typeElEn) {
   }
 
 
-  /* ---------- Flip cards (click + keyboard already inline) ---------- */
+  /* ---------- Flip cards ---------- */
   document.querySelectorAll('.flip-card').forEach(function(card){
     card.addEventListener('click', function(e){
       if (e.target.closest('a, .tl-link')) return;
@@ -1730,50 +1719,50 @@ if (typeElEn) {
 });
 
 
-// 1. الدالة الرئيسية التي يتم استدعاؤها عند الضغط على الزر (تحدد اللغة القادمة)
+
 function switchSiteLanguage() {
-    // جلب اللغة الحالية المفعّلة في المتصفح (إذا لم تكن موجودة يفترض أنها عربي 'ar')
+
     const currentLang = document.documentElement.lang || 'ar';
     
-    // عملية التبديل: إذا كانت عربي حولها لإنجليزي، والعكس صحيح
+
     const newLang = (currentLang === 'ar') ? 'en' : 'ar';
     
-    // استدعاء دالة تطبيق التغييرات
+
     applyLanguageSetting(newLang);
 }
 
-// 2. الدالة المسؤولة عن تطبيق الاتجاهات، النصوص، وحفظ الخيارات
+
 function applyLanguageSetting(lang) {
-    // جلب عنصر النص الموجود داخل زر تبديل اللغة الخاص بكِ
+
     const langBtnText = document.querySelector('.lang-toggle-btn .lang-text');
     
     if (lang === 'en') {
-        // تحويل خصائص الصفحة للغة الإنجليزية
+
         document.documentElement.lang = 'en';
         document.documentElement.dir = 'ltr';
         
-        // تغيير الكلمة داخل الزر لتصبح (AR) للإشارة إلى أن الضغطة القادمة تعيد للعربي
+
         if (langBtnText) langBtnText.textContent = 'AR';
         
     } else {
-        // تحويل خصائص الصفحة للغة العربية
+
         document.documentElement.lang = 'ar';
         document.documentElement.dir = 'rtl';
         
-        // تغيير الكلمة داخل الزر لتصبح (EN) للإشارة إلى أن الضغطة القادمة تحول للإنجليزي
+
         if (langBtnText) langBtnText.textContent = 'EN';
     }
     
-    // حفظ اللغة المفعّلة حالياً في ذاكرة المتصفح المحلية (LocalStorage)
+
     localStorage.setItem("siteLanguage", lang);
 }
 
-// 3. الفحص التلقائي فور تحميل الصفحة في المتصفح
+
 document.addEventListener("DOMContentLoaded", () => {
-    // قراءة اللغة المحفوظة سابقاً، وإذا كان المستخدم يدخل لأول مرة يتم اعتماد العربي 'ar' كإفتراضي
+
     const savedLang = localStorage.getItem("siteLanguage") || "ar";
     
-    // تطبيق اللغة المسترجعة فوراً عند فتح الموقع
+
     applyLanguageSetting(savedLang);
 });
 
